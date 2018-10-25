@@ -1,0 +1,205 @@
+$fontMedium: 100 2em 'Work Sans',
+sans-serif;
+$fontLarge: 200 3em 'Work Sans',
+sans-serif;
+$fontSmall: 200 1em 'Work Sans',
+sans-serif;
+$fontMediumBold: 200 1em 'Work Sans',
+sans-serif;
+$fontLargeBold: 300 1em 'Work Sans',
+sans-serif;
+$fontSmallBold: 300 1em 'Work Sans',
+sans-serif;
+$cubic: cubic-bezier(0, 0, .2, 1);
+$panel-green: rgb(113, 152, 165);
+/* svg background */
+
+$bgGradients: 'bgG1',
+'bgG2',
+'bgG3';
+$bgLight: #466670,
+#7198A5,
+#D5EDF5;
+$bgDarker: #000,
+#246A81,
+#D5EDF5;
+$bgDarkest: #000,
+#082D3A,
+#0D475B;
+/* trees background variables */
+
+$tree1-original: "M9.95421 48.0985C-8.84046 48.0985 3.59061 16.18 9.95421 0C16.6413 16.1813 28.7489 48.0985 9.95421 48.0985Z";
+$tree2-original: "M19.9084 96.197C-17.6809 96.197 7.18123 32.3599 19.9084 0C33.2826 32.3625 57.4977 96.197 19.9084 96.197Z";
+$tree3-original: "M9.95421 48.0985C-8.84046 48.0985 3.59061 16.18 9.95421 0C16.6413 16.1813 28.7489 48.0985 9.95421 48.0985Z";
+$tree4-original: "M24.8855 120.246C-22.1012 120.246 8.97653 40.4499 24.8855 0C41.6033 40.4531 71.8722 120.246 24.8855 120.246Z";
+$tree5-original: "M14.9313 72.1477C-13.2607 72.1477 5.38592 24.2699 14.9313 0C24.962 24.2719 43.1233 72.1477 14.9313 72.1477Z";
+$tree6-original: "M24.8855 120.246C-22.1012 120.246 8.97653 40.4499 24.8855 0C41.6033 40.4531 71.8722 120.246 24.8855 120.246Z";
+$tree7-original: "M14.9313 72.1477C-13.2607 72.1477 5.38592 24.2699 14.9313 0C24.962 24.2719 43.1233 72.1477 14.9313 72.1477Z";
+$tree1-trans-original: translate(151px, 121px);
+$tree2-trans-original: translate(201px, 63px);
+$tree3-trans-original: translate(248px, 130px);
+$tree4-trans-original: translate(960px, 69px);
+$tree5-trans-original: translate(1044px, 108px);
+$tree6-trans-original: translate(1775px, 45px);
+$tree7-trans-original: translate(1755px, 118px);
+$tree1-right: "M8.35947 43.6651C-12.5864 43.6651 10.7386 10.6667 24.8386 0C16.453 10 29.3053 43.6651 8.35947 43.6651Z";
+$tree2-right: "M16.7189 87.3303C-25.1727 87.3303 21.4772 21.3333 49.6771 0C32.906 20 58.6106 87.3303 16.7189 87.3303Z";
+$tree3-right: "M8.35947 43.6651C-12.5864 43.6651 10.7386 10.6667 24.8386 0C16.453 10 29.3053 43.6651 8.35947 43.6651Z";
+$tree4-right: "M20.8987 109.163C-31.4659 109.163 26.8465 26.6667 62.0964 0C41.1325 25 73.2632 109.163 20.8987 109.163Z";
+$tree5-right: "M12.5392 65.4977C-18.8795 65.4977 16.1079 16 37.2579 0C24.6795 15 43.9579 65.4977 12.5392 65.4977Z";
+$tree6-right: "M20.8987 109.163C-31.4659 109.163 26.8465 26.6667 62.0964 0C41.1325 25 73.2632 109.163 20.8987 109.163Z";
+$tree7-right: "M12.5392 65.4977C-18.8795 65.4977 16.1079 16 37.2579 0C24.6795 15 43.9579 65.4977 12.5392 65.4977Z";
+$tree1-trans-right: translate(152.595px, 125.434px);
+$tree2-trans-right: translate(204.189px, 71.8662px);
+$tree3-trans-right: translate(249.595px, 134.434px);
+$tree4-trans-right: translate(963.987px, 80.083px);
+$tree5-trans-right: translate(1046.39px, 114.65px);
+$tree6-trans-right: translate(1778.99px, 56.083px);
+$tree7-trans-right: translate(1757.39px, 124.65px);
+$tree1-left: "M13.0876 46.0652C-6.82486 46.0652 7.9 13.7667 0 0C11.3333 15.1 33 46.0652 13.0876 46.0652Z";
+$tree2-left: "M26.1751 92.1303C-13.6497 92.1303 15.8 27.5333 0 0C22.6667 30.2 66 92.1303 26.1751 92.1303Z";
+$tree3-left: "M13.0876 46.0652C-6.82486 46.0652 7.9 13.7667 0 0C11.3333 15.1 33 46.0652 13.0876 46.0652Z";
+$tree4-left: "M32.7189 115.163C-17.0622 115.163 19.75 34.4167 0 0C28.3333 37.75 82.5 115.163 32.7189 115.163Z";
+$tree5-left: "M19.6314 69.0977C-10.2373 69.0977 11.85 20.65 0 0C17 22.65 49.5 69.0977 19.6314 69.0977Z";
+$tree6-left: "M32.7189 115.163C-17.0622 115.163 19.75 34.4167 0 0C28.3333 37.75 82.5 115.163 32.7189 115.163Z";
+$tree7-left: "M19.6314 69.0977C-10.2373 69.0977 11.85 20.65 0 0C17 22.65 49.5 69.0977 19.6314 69.0977Z";
+$tree1-trans-left: translate(147.866px, 123.033px);
+$tree2-trans-left: translate(194.732px, 67.0664px);
+$tree3-trans-left: translate(244.866px, 132.033px);
+$tree4-trans-left: translate(952.166px, 74.083px);
+$tree5-trans-left: translate(1039.3px, 111.05px);
+$tree6-trans-left: translate(1767.17px, 50.083px);
+$tree7-trans-left: translate(1750.3px, 121.05px);
+$tree1-littleRight: "M9.20478 44.7652C-10.9743 44.7652 7.11725 14.9667 15.3506 0C11.2048 16.5667 29.3839 44.7652 9.20478 44.7652Z";
+$tree2-littleRight: "M18.4096 89.5303C-21.9487 89.5303 14.2345 29.9333 30.7011 0C22.4096 33.1333 58.7678 89.5303 18.4096 89.5303Z";
+$tree3-littleRight: "M9.20478 44.7652C-10.9743 44.7652 7.11725 14.9667 15.3506 0C11.2048 16.5667 29.3839 44.7652 9.20478 44.7652Z";
+$tree4-littleRight: "M23.012 111.913C-27.4359 111.913 17.7931 37.4167 38.3764 0C28.012 41.4167 73.4598 111.913 23.012 111.913Z";
+$tree5-littleRight: "M13.8072 67.1477C-16.4615 67.1477 10.6759 22.45 23.0258 0C16.8072 24.85 44.0759 67.1477 13.8072 67.1477Z";
+$tree6-littleRight: "M23.012 111.913C-27.4359 111.913 17.7931 37.4167 38.3764 0C28.012 41.4167 73.4598 111.913 23.012 111.913Z";
+$tree7-littleRight: "M13.8072 67.1477C-16.4615 67.1477 10.6759 22.45 23.0258 0C16.8072 24.85 44.0759 67.1477 13.8072 67.1477Z";
+$tree1-trans-littleRight: translate(152.595px, 125.434px);
+$tree2-trans-littleRight: translate(204.189px, 71.8662px);
+$tree3-trans-littleRight: translate(249.595px, 134.434px);
+$tree4-trans-littleRight: translate(961.874px, 77.333px);
+$tree5-trans-littleRight: translate(1045.12px, 113px);
+$tree6-trans-littleRight: translate(1776.87px, 53.333px);
+$tree7-trans-littleRight: translate(1756.12px, 123px);
+$tree1-littleLeft: "M10.7896 45.7318C-10.1562 45.7318 6.40211 15.9333 3.33542 0C12.3688 13.8333 31.7355 45.7318 10.7896 45.7318Z";
+$tree2-littleLeft: "M21.5792 91.4636C-20.3124 91.4636 12.8042 31.8667 6.67084 0C24.7375 27.6667 63.4709 91.4636 21.5792 91.4636Z";
+$tree3-littleLeft: "M10.7896 45.7318C-10.1562 45.7318 6.40211 15.9333 3.33542 0C12.3688 13.8333 31.7355 45.7318 10.7896 45.7318Z";
+$tree4-littleLeft: "M26.9741 114.33C-25.3905 114.33 16.0053 39.8333 8.33855 0C30.9219 34.5833 79.3386 114.33 26.9741 114.33Z";
+$tree5-littleLeft: "M16.1844 68.5977C-15.2343 68.5977 9.60316 23.9 5.00313 0C18.5531 20.75 47.6032 68.5977 16.1844 68.5977Z";
+$tree6-littleLeft: "M26.9741 114.33C-25.3905 114.33 16.0053 39.8333 8.33855 0C30.9219 34.5833 79.3386 114.33 26.9741 114.33Z";
+$tree7-littleLeft: "M16.1844 68.5977C-15.2343 68.5977 9.60316 23.9 5.00313 0C18.5531 20.75 47.6032 68.5977 16.1844 68.5977Z";
+$tree1-trans-littleLeft: translate(150.165px, 123.366px);
+$tree2-trans-littleLeft: translate(199.329px, 67.7334px);
+$tree3-trans-littleLeft: translate(247.165px, 132.366px);
+$tree4-trans-littleLeft: translate(957.911px, 74.917px);
+$tree5-trans-littleLeft: translate(1042.75px, 111.55px);
+$tree6-trans-littleLeft: translate(1772.91px, 50.917px);
+$tree7-trans-littleLeft: translate(1753.75px, 121.55px);
+$tree1-miniRight: "M9.25764 44.5652C-8.62146 44.5652 3.13681 13.6 13.3035 0C15.0367 15.9 27.1367 44.5652 9.25764 44.5652Z";
+$tree2-miniRight: "M18.5153 89.1303C-17.2429 89.1303 6.27361 27.2 26.6069 0C30.0735 31.8 54.2735 89.1303 18.5153 89.1303Z";
+$tree3-miniRight: "M9.25764 44.5652C-8.62146 44.5652 3.13681 13.6 13.3035 0C15.0367 15.9 27.1367 44.5652 9.25764 44.5652Z";
+$tree4-miniRight: "M23.1441 111.413C-21.5536 111.413 7.84202 34 33.2586 0C37.5919 39.75 67.8419 111.413 23.1441 111.413Z";
+$tree5-miniRight: "M13.8865 66.8477C-12.9322 66.8477 4.70521 20.4 19.9552 0C22.5551 23.85 40.7051 66.8477 13.8865 66.8477Z";
+$tree6-miniRight: "M23.1441 111.413C-21.5536 111.413 7.84202 34 33.2586 0C37.5919 39.75 67.8419 111.413 23.1441 111.413Z";
+$tree7-miniRight: "M13.8865 66.8477C-12.9322 66.8477 4.70521 20.4 19.9552 0C22.5551 23.85 40.7051 66.8477 13.8865 66.8477Z";
+$tree1-trans-miniRight: translate(151.697px, 124.533px);
+$tree2-trans-miniRight: translate(202.394px, 70.0664px);
+$tree3-trans-miniRight: translate(248.697px, 133.533px);
+$tree4-trans-miniRight: translate(961.741px, 77.833px);
+$tree5-trans-miniRight: translate(1045.04px, 113.3px);
+$tree6-trans-miniRight: translate(1776.74px, 53.833px);
+$tree7-trans-miniRight: translate(1756.04px, 123.3px);
+$treetops: "top1",
+"top2",
+"top3",
+"top4",
+"top5",
+"top6",
+"top7";
+$original-pos-array: $tree1-original,
+$tree2-original,
+$tree3-original,
+$tree4-original,
+$tree5-original,
+$tree6-original,
+$tree7-original;
+$original-trans-array: $tree1-trans-original,
+$tree2-trans-original,
+$tree3-trans-original,
+$tree4-trans-original,
+$tree5-trans-original,
+$tree6-trans-original,
+$tree7-trans-original;
+$sway-right-array: $tree1-right,
+$tree2-right,
+$tree3-right,
+$tree4-right,
+$tree5-right,
+$tree6-right,
+$tree7-right;
+$sway-right-trans: $tree1-trans-right,
+$tree2-trans-right,
+$tree3-trans-right,
+$tree4-trans-right,
+$tree5-trans-right,
+$tree6-trans-right,
+$tree7-trans-right;
+$sway-left-array: $tree1-left,
+$tree2-left,
+$tree3-left,
+$tree4-left,
+$tree5-left,
+$tree6-left,
+$tree7-left;
+$sway-left-trans: $tree1-trans-left,
+$tree2-trans-left,
+$tree3-trans-left,
+$tree4-trans-left,
+$tree5-trans-left,
+$tree6-trans-left,
+$tree7-trans-left;
+$sway-little-right-array: $tree1-littleRight,
+$tree2-littleRight,
+$tree3-littleRight,
+$tree4-littleRight,
+$tree5-littleRight,
+$tree6-littleRight,
+$tree7-littleRight;
+$sway-little-right-trans: $tree1-trans-littleRight,
+$tree2-trans-littleRight,
+$tree3-trans-littleRight,
+$tree4-trans-littleRight,
+$tree5-trans-littleRight,
+$tree6-trans-littleRight,
+$tree7-trans-littleRight;
+$sway-little-left-array: $tree1-littleLeft,
+$tree2-littleLeft,
+$tree3-littleLeft,
+$tree4-littleLeft,
+$tree5-littleLeft,
+$tree6-littleLeft,
+$tree7-littleLeft;
+$sway-little-left-trans: $tree1-trans-littleLeft,
+$tree2-trans-littleLeft,
+$tree3-trans-littleLeft,
+$tree4-trans-littleLeft,
+$tree5-trans-littleLeft,
+$tree6-trans-littleLeft,
+$tree7-trans-littleLeft;
+$sway-mini-right-array: $tree1-miniRight,
+$tree2-miniRight,
+$tree3-miniRight,
+$tree4-miniRight,
+$tree5-miniRight,
+$tree6-miniRight,
+$tree7-miniRight;
+$sway-mini-right-trans: $tree1-trans-miniRight,
+$tree2-trans-miniRight,
+$tree3-trans-miniRight,
+$tree4-trans-miniRight,
+$tree5-trans-miniRight,
+$tree6-trans-miniRight,
+$tree7-trans-miniRight;

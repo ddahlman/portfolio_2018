@@ -1,0 +1,40 @@
+@import '../variables';
+@import '../mixins';
+@import '../extensions';
+.absoluteContainer {
+    @extend %absoluteContainer;
+    z-index: 1000;
+    width: 100vw;
+    .menuGrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        .menu {
+            grid-column: 1/4;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            list-style-type: none;
+            background-color: transparent;
+            .linkStyle {
+                font: $fontMedium;
+                color: #fff;
+                text-decoration: none;
+                position: relative;
+                &:before {
+                    background-color: #fff;
+                    content: "";
+                    height: 1px;
+                    position: absolute;
+                    bottom: -1px;
+                    transition: width 0.15s $cubic;
+                    will-change: width;
+                    width: 0;
+                }
+                &:hover {
+                    &:before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

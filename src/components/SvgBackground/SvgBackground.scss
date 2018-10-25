@@ -1,0 +1,110 @@
+@import '../variables';
+@import '../mixins';
+@import '../extensions';
+
+.container {
+    position: absolute;
+    z-index: -1;
+}
+
+@for $i from 1 through length($bgGradients) {
+    $light: nth($bgLight, $i);
+    $darker: nth($bgDarker, $i);
+    $darkest: nth($bgDarkest, $i);
+
+    .keepLight#{$i} {
+        stop-color: $light;
+    }
+
+    .darkerToLight#{$i} {
+        animation: darker-to-light-#{$i} .7s $cubic forwards;
+    }
+
+    .darkestToLight#{$i} {
+        animation: darkest-to-light-#{$i} .7s $cubic forwards;
+    }
+
+    .keepDarker#{$i} {
+        stop-color: $darker;
+    }
+
+    .darkestToDarker#{$i} {
+        animation: darkest-to-darker-#{$i} .7s $cubic forwards;
+    }
+
+    .lightToDarker#{$i} {
+        animation: light-to-darker-#{$i} .7s $cubic forwards;
+    }
+
+    .keepDarkest#{$i} {
+        stop-color: $darkest;
+    }
+
+    .darkerToDarkest#{$i} {
+        animation: darker-to-darkest-#{$i} .7s $cubic forwards;
+    }
+
+    .lightToDarkest#{$i} {
+        animation: light-to-darkest-#{$i} .7s $cubic forwards;
+    }
+
+    @keyframes darker-to-light-#{$i} {
+        from {
+            stop-color: $darker;
+        }
+
+        to {
+            stop-color: $light;
+        }
+    }
+
+    @keyframes darkest-to-light-#{$i} {
+        from {
+            stop-color: $darkest;
+        }
+
+        to {
+            stop-color: $light;
+        }
+    }
+
+    @keyframes darkest-to-darker-#{$i} {
+        from {
+            stop-color: $darkest;
+        }
+
+        to {
+            stop-color: $darker;
+        }
+    }
+
+    @keyframes light-to-darker-#{$i} {
+        from {
+            stop-color: $light;
+        }
+
+        to {
+            stop-color: $darker;
+        }
+    }
+
+    @keyframes darker-to-darkest-#{$i} {
+        from {
+            stop-color: $darker;
+        }
+
+        to {
+            stop-color: $darkest;
+        }
+    }
+
+    @keyframes light-to-darkest-#{$i} {
+        from {
+            stop-color: $light;
+        }
+
+        to {
+            stop-color: $darkest;
+        }
+    }
+}

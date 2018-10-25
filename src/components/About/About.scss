@@ -1,0 +1,10 @@
+@import '../variables';
+@import '../mixins';
+@import '../extensions';
+.absoluteContainer {
+    @extend %absoluteContainer;
+    .container {
+        @extend %grid;
+        font: $fontLarge;
+    }
+}

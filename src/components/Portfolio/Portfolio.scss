@@ -1,0 +1,101 @@
+@import '../variables';
+@import '../mixins';
+@import '../extensions';
+
+.absoluteContainer {
+    @extend %absoluteContainer;
+
+    .container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template: 17% 1fr / 10% 1fr 10%;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cardContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+    }
+}
+
+.emptyCell {
+    height: 320px;
+}
+
+.card {
+    background-color: #fff;
+
+    &.cardIsShowing {
+        height: 340px;
+        cursor: pointer;
+        border-radius: 3px;
+        opacity: 1;
+    }
+
+    &.cardFadeOut {
+        opacity: 0;
+    }
+
+    &.thisCardFadeOut {
+        box-shadow: 0 0 0;
+    }
+
+    .imgContainer {
+        will-change: transform;
+        transform-origin: top left;
+
+        &.imgContainerCollapsed {
+            position: relative;
+            background-color: #D5EDF5;
+            width: 100%;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: #082d3a;
+                mix-blend-mode: lighten;
+            }
+        }
+
+        &.imgContainerScale {
+            position: absolute;
+            top: 20%;
+            left: 0;
+            z-index: 101;
+            width: 50%;
+        }
+
+        .img {
+            filter: grayscale(100%) contrast(1);
+            mix-blend-mode: multiply;
+            width: 100%;
+        }
+    }
+
+    .cardText {
+        padding: 1em;
+        font: $fontSmallBold;
+        color: #082d3a;
+
+        &.cardTextIsShowing {
+            opacity: 1;
+        }
+
+        &.cardTextFadeOut {
+            opacity: 0;
+        }
+    }
+}
