@@ -3,7 +3,7 @@ import style from './Portfolio.scss';
 import HillsWithTrees from '../HillsWithTrees/HillsWithTrees';
 import Card from './Card';
 import SvgBackground from '../SvgBackground/SvgBackground';
-import { homePage, dashboard, hangman, snake, todolist, git, codepen, wordpress } from './portfolioImages';
+import { homePage, dashboard, hangman, snake, todolist, git, codepen, wordpress } from './portfolioItems';
 import PropTypes from 'prop-types';
 
 export default class Portfolio extends Component {
