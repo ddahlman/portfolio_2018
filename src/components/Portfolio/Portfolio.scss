@@ -34,26 +34,23 @@
 .card {
     background-color: #fff;
 
-    &.cardIsShowing {
+    &.isScaled {
         height: 340px;
         cursor: pointer;
         border-radius: 3px;
         opacity: 1;
     }
 
-    &.cardFadeOut {
-        opacity: 0;
-    }
-
-    &.thisCardFadeOut {
-        box-shadow: 0 0 0;
+    &.isNotScaled {
+        height: 0;
+        width: 0;
     }
 
     .imgContainer {
         will-change: transform;
         transform-origin: top left;
 
-        &.imgContainerCollapsed {
+        &.collapsed {
             position: relative;
             background-color: #D5EDF5;
             width: 100%;
@@ -70,7 +67,7 @@
             }
         }
 
-        &.imgContainerScale {
+        &.scale {
             position: absolute;
             top: 20%;
             left: 0;
@@ -97,5 +94,29 @@
         &.cardTextFadeOut {
             opacity: 0;
         }
+    }
+}
+
+.cross {
+    align-self: center;
+    justify-self: center;
+
+    &::before,
+    &::after {
+        position: absolute;
+        border-radius: 3px;
+        content: "";
+        height: 2px;
+        width: 35px;
+        background-color: #fff;
+        transition: transform 0.3s linear;
+    }
+
+    &.rotate::before {
+        transform: rotate(45deg);
+    }
+
+    &.rotate::after {
+        transform: rotate(-45deg);
     }
 }

@@ -1,35 +1,32 @@
 import React, { Component } from 'react';
 import style from './Portfolio.scss';
 import HillsWithTrees from '../HillsWithTrees/HillsWithTrees';
-import Card from './Card';
+import AllCards from './AllCards';
+import FadeUpText from './FadeUpText';
+import FadeUpContent from './FadeUpContent';
 import SvgBackground from '../SvgBackground/SvgBackground';
-import { homePage, dashboard, hangman, snake, todolist, git, codepen, wordpress } from './portfolioItems';
+import portfolioItems from './portfolioItems';
 import PropTypes from 'prop-types';
 
 export default class Portfolio extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			cards: [
-				{ src: homePage, alt: 'homepage', text: 'This was my first portfoliopage which was created for getting internships' },
-				{ src: dashboard, alt: 'dashboard', text: 'I created a dashboard for one of the companies I did my internship at and this was the result' },
-				{ src: wordpress, alt: 'wordpress', text: 'My first wordpress theme, nothing to fancy, just to show that I can do it' },
-				{ src: todolist, alt: 'todolist', text: 'A simple todolist made out of JS and Bootstrap' },
-				{ src: hangman, alt: 'hangman', text: 'A hangman-game that is actually an easter egg in my first portfolio page. Created out of JS' },
-				{ src: snake, alt: 'snake', text: 'This is a snake-game made in a html5 canvas element' },
-				{ src: git, alt: 'git', text: 'Check out some of my repos' },
-				{ src: codepen, alt: 'codepen', text: 'Here is a collection of my tests and "work in progress", love to test new things here' },
-				{ src: null },
-				{ src: null },
-				{ src: null },
-				{ src: null }
-			],
+			cards: portfolioItems,
 			cssClasses: {
 				a: 'keepDarkest1',
 				b: 'keepDarkest2',
 				c: 'keepDarkest3'
-			}
+			},
+			hasFadedUp: false,
+			hasRotated: false,
+			scaleCard: false
 		};
+		this.changeSize = this.changeSize.bind(this);
+		this.rotate = this.rotate.bind(this);
+		this.imagesHasLoaded = this.imagesHasLoaded.bind(this);
+		this.setImageState = this.setImageState.bind(this);
+		this.imgArray = [];
 	}
 
 	componentDidMount() {
@@ -44,15 +41,53 @@ export default class Portfolio extends Component {
 		}
 	}
 
+	imagesHasLoaded(callback) {
+		this.imgArray = [...this.imgArray, 'loaded'];
+		this.imgArray.length > 5 && callback(this.imgArray);
+	}
+
+	setImageState(imgArray) {
+		const isLoaded = imgArray.every(img => img === 'loaded');
+		imgArray.length === 6 &&
+			isLoaded &&
+			this.setState({ scaleCard: isLoaded });
+	}
+
+	rotate() { this.setState({ hasRotated: !this.state.hasRotated }); }
+
+	changeSize(index) {
+		this.cardIndex = index;
+		let newArray = [...this.state.boxes];
+		newArray[index].enlarged = !newArray[index].enlarged;
+		this.setState({
+			boxes: newArray,
+			hasFadedUp: !this.state.hasFadedUp
+		});
+	}
+
 
 	render() {
-		const { cssClasses, cards } = this.state;
+		const { cssClasses, cards, hasFadedUp, hasRotated, scaleCard } = this.state;
 		return (
 			<section className={style.absoluteContainer}>
 				<div className={style.container}>
 					<div className={style.cardContainer}>
-						{cards.map((card, i) => (<Card src={card.src} key={`card-${i}`} alt={card.alt} text={card.text} />))}
+						<AllCards cards={cards}
+							setImageState={this.setImageState}
+							scaleCard={scaleCard}
+							crossRotate={this.rotate}
+							hasLoaded={this.imagesHasLoaded}
+							openBox={this.changeSize}
+						/>
 					</div>
+					<FadeUpText closeBox={() => { this.changeSize(this.cardIndex); }}
+						hasFadedUp={hasFadedUp}
+						cross={hasRotated}>
+						{this.cardIndex !== undefined && (<FadeUpContent
+							header={cards[this.cardIndex].header}
+							text={cards[this.cardIndex].text}
+						/>)}
+					</FadeUpText>
 					<SvgBackground cssClasses={cssClasses} />
 					<HillsWithTrees />
 				</div>
