@@ -14,9 +14,9 @@ export default class FadeUpText extends Component {
 				duration={{ transform: '.5s', opacity: '2s', delay: '0s' }}
 				styleDeclaration={'transformAndOpacity'}
 			>
-				<div className={hasFadedUp ? 'text fadeUp' : 'text fadeDown'}>
+				<div className={hasFadedUp ? `${style.text} ${style.fadeUp}` : `${style.text} ${style.fadeDown}`}>
 					<Cross {...other} />
-					<div className={'text-container'}>{children}</div>
+					<div className={style.textContainer}>{children}</div>
 				</div>
 			</FLIP>
 		);

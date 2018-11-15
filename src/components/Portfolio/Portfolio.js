@@ -48,7 +48,7 @@ export default class Portfolio extends Component {
 
 	setImageState(imgArray) {
 		const isLoaded = imgArray.every(img => img === 'loaded');
-		imgArray.length === 6 &&
+		imgArray.length > 7 &&
 			isLoaded &&
 			this.setState({ scaleCard: isLoaded });
 	}
@@ -57,10 +57,10 @@ export default class Portfolio extends Component {
 
 	changeSize(index) {
 		this.cardIndex = index;
-		let newArray = [...this.state.boxes];
+		let newArray = [...this.state.cards];
 		newArray[index].enlarged = !newArray[index].enlarged;
 		this.setState({
-			boxes: newArray,
+			cards: newArray,
 			hasFadedUp: !this.state.hasFadedUp
 		});
 	}
@@ -80,17 +80,18 @@ export default class Portfolio extends Component {
 							openBox={this.changeSize}
 						/>
 					</div>
-					<FadeUpText closeBox={() => { this.changeSize(this.cardIndex); }}
-						hasFadedUp={hasFadedUp}
-						cross={hasRotated}>
-						{this.cardIndex !== undefined && (<FadeUpContent
-							header={cards[this.cardIndex].header}
-							text={cards[this.cardIndex].text}
-						/>)}
-					</FadeUpText>
+
 					<SvgBackground cssClasses={cssClasses} />
 					<HillsWithTrees />
 				</div>
+				<FadeUpText closeBox={() => { this.changeSize(this.cardIndex); }}
+					hasFadedUp={hasFadedUp}
+					cross={hasRotated}>
+					{this.cardIndex !== undefined && (<FadeUpContent
+						header={cards[this.cardIndex].header}
+						text={cards[this.cardIndex].text}
+					/>)}
+				</FadeUpText>
 			</section>
 		);
 	}

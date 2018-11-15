@@ -74,7 +74,7 @@ export default class FLIP extends Component {
 }
 
 FLIP.propTypes = {
-	animate: PropTypes.string,
+	animate: PropTypes.bool,
 	duration: PropTypes.object,
 	styleDeclaration: PropTypes.string,
 	children: PropTypes.node

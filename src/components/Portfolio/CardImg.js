@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import FLIP from './FLIP';
+import FLIP from '../FLIP';
 import style from './Portfolio.scss';
 import PropTypes from 'prop-types';
 
 export default class CardImg extends Component {
 
-	hasLoaded(callback) {
-		e => {
-			this.props.hasLoaded(callback, e);
-		};
+	hasLoaded = callback => e => {
+		this.props.hasLoaded(callback, e);
 	}
 
 
-	loaded() { this.hasLoaded(this.props.setImageState); }
+	loaded = this.hasLoaded(this.props.setImageState);
 
 	render() {
 		const { crossRotate, src, enlarged } = this.props;

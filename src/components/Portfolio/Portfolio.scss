@@ -86,37 +86,69 @@
         padding: 1em;
         font: $fontSmallBold;
         color: #082d3a;
-
-        &.cardTextIsShowing {
-            opacity: 1;
-        }
-
-        &.cardTextFadeOut {
-            opacity: 0;
-        }
     }
 }
 
-.cross {
-    align-self: center;
-    justify-self: center;
+.text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 30%;
+    width: 100vw;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
 
-    &::before,
-    &::after {
-        position: absolute;
-        border-radius: 3px;
-        content: "";
-        height: 2px;
-        width: 35px;
-        background-color: #fff;
-        transition: transform 0.3s linear;
+    position: absolute;
+
+    &.fadeUp {
+        opacity: 1;
+        top: 0;
+        z-index: 1001;
     }
 
-    &.rotate::before {
-        transform: rotate(45deg);
+    &.fadeDown {
+        opacity: 0;
+        top: 50%;
+        z-index: -1;
     }
 
-    &.rotate::after {
-        transform: rotate(-45deg);
+    .textContainer {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        justify-self: center;
+    }
+}
+
+.crossContainer {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    width: 100px;
+    height: 100px;
+    justify-self: end;
+    grid-template: 1fr / 1fr;
+    cursor: pointer;
+
+    .cross {
+        align-self: center;
+        justify-self: center;
+
+        &::before,
+        &::after {
+            position: absolute;
+            border-radius: 3px;
+            content: "";
+            height: 2px;
+            width: 35px;
+            background-color: #fff;
+            transition: transform 0.3s linear;
+        }
+
+        &.rotate::before {
+            transform: rotate(45deg);
+        }
+
+        &.rotate::after {
+            transform: rotate(-45deg);
+        }
     }
 }

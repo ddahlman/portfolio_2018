@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import style from './Portfolio.scss';
-import CardImg from './BoxImg';
+import CardImg from './CardImg';
 import FLIP from '../FLIP';
 import PropTypes from 'prop-types';
 
 export default class Card extends Component {
-	openBox(index) {
-		e => {
-			this.props.openBox(index, e);
-		};
+	openBox = index => e => {
+		this.props.openBox(index, e);
 	}
 
-	open() { this.openBox(this.props.cardIndex); }
+	open = this.openBox(this.props.cardIndex);
 
 	render() {
 		const { scaleCard, cardIndex, src, text, ...other } = this.props;
@@ -28,7 +26,7 @@ export default class Card extends Component {
 					styleDeclaration={'scaleAndOpacity'}
 				>
 					<div className={scaleCard ? `${style.card} ${style.isScaled}` : `${style.card} ${style.isNotScaled}`} onClick={this.open}>
-						<CardImg boxIndex={cardIndex} {...other} />
+						<CardImg src={src} {...other} />
 						<div className={style.cardText}>{scaleCard && <p>{text}</p>}</div>
 					</div>
 				</FLIP>
