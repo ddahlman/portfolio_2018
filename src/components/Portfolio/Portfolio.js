@@ -20,7 +20,8 @@ export default class Portfolio extends Component {
 			},
 			hasFadedUp: false,
 			hasRotated: false,
-			scaleCard: false
+			scaleCard: false,
+			isVisible: false
 		};
 		this.changeSize = this.changeSize.bind(this);
 		this.rotate = this.rotate.bind(this);
@@ -61,15 +62,17 @@ export default class Portfolio extends Component {
 		newArray[index].enlarged = !newArray[index].enlarged;
 		this.setState({
 			cards: newArray,
-			hasFadedUp: !this.state.hasFadedUp
+			hasFadedUp: !this.state.hasFadedUp,
+			isVisible: !this.state.isVisible
 		});
 	}
 
 
 	render() {
-		const { cssClasses, cards, hasFadedUp, hasRotated, scaleCard } = this.state;
+		const { cssClasses, cards, hasFadedUp, hasRotated, scaleCard, isVisible } = this.state;
 		return (
 			<section className={style.absoluteContainer}>
+				<div className={isVisible ? `${style.overlay} ${style.visible} ${style.transitionVisible}` : `${style.overlay} ${style.hidden} ${style.transitionHidden}`} />
 				<div className={style.container}>
 					<div className={style.cardContainer}>
 						<AllCards cards={cards}
