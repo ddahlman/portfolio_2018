@@ -15,7 +15,6 @@ export default class BarChart extends Component {
                 { id: 5, barClass: "bar5", skill: "CSS" },
                 { id: 6, barClass: "bar6", skill: "Sass" }
             ],
-            isGrowing: false,
             scaleLabels: [
                 "Jedi",
                 "advanced",
@@ -26,16 +25,13 @@ export default class BarChart extends Component {
         };
     }
 
-    componentDidMount() {
-        this.setState({ isGrowing: true });
-    }
-
     render() {
-        const { isGrowing, columns, scaleLabels } = this.state;
+        const { columns, scaleLabels } = this.state;
+        const { isGrowing } = this.props;
         return (
-            <div className={"barChart"}>
+            <div className={style.barChart}>
                 <svg
-                    viewBox="0 0 350 285"
+                    viewBox="0 0 1350 685"
                     fill="none"
                     preserveAspectRatio="xMinYMin meet"
                 >
@@ -47,9 +43,9 @@ export default class BarChart extends Component {
                             fill="none"
                             points="0,-10 0,150 200,150"
                         />
-                        (
-            <AllBarColumns columns={columns} isGrowing={isGrowing} />)
-          </g>
+
+                        <AllBarColumns columns={columns} isGrowing={isGrowing} />
+                    </g>
                 </svg>
             </div>
         );
