@@ -31,7 +31,7 @@ export default class BarChart extends Component {
         return (
             <div className={style.barChart}>
                 <svg
-                    viewBox="-110 -100 350 385"
+                    viewBox="-170 -100 450 385"
                     fill="none"
                     preserveAspectRatio="xMinYMin meet"
                 >

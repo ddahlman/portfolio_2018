@@ -8,12 +8,13 @@ export default class AboutTools extends Component {
         this.state = {
             items: [
                 { id: 1, header: "Version control", text: ["Git", "TFS"] },
-                { id: 2, header: "Agile", text: ["Scrum", "Kanban"] },
                 {
-                    id: 3,
+                    id: 2,
                     header: "UX/UI webdesign tools",
                     text: ["Invision", "Figma", "Adobe Photoshop"]
                 },
+                { id: 3, header: "Agile styles", text: ["Scrum", "Kanban"] },
+
                 {
                     id: 4,
                     header: "Techniques and paterns",

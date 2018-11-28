@@ -71,11 +71,12 @@
 
 .aboutToolsContainer {
     grid-area: tools;
+    color: #fff;
     list-style: none;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     grid-template-rows: repeat(2, min-content);
-    grid-gap: 10px;
+    grid-column-gap: 15px;
     align-content: center;
     width: 85%;
     font: $fontSmall;
@@ -91,5 +92,6 @@
 
 .aboutText {
     grid-area: text;
+    color: #fff;
     font: $fontSmall;
 }
