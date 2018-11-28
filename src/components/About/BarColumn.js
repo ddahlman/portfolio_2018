@@ -18,7 +18,7 @@ const BarColumn = ({ isGrowing, spaceX, pointX, angleX, skill, bar }) => {
             />
             <text
                 transform={`rotate(-30 ${pointX} 120)`}
-                className={style.scaleText}
+                className={style.barChartText}
                 x={pointX - 31}
                 y="159"
                 fill={"#000"}

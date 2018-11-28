@@ -4,7 +4,7 @@ import style from "./About.scss";
 const BarScale = ({ yAxis, label }) => (
     <g>
         <text
-            className={style.scaleText}
+            className={style.barChartText}
             x="-15"
             y={yAxis + 3}
             textAnchor="end"
