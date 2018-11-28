@@ -27,10 +27,6 @@ export default class Home extends Component {
 		}
 	}
 
-	componentWillUnmount() {
-
-	}
-
 
 
 	render() {

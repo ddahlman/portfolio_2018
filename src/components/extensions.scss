@@ -4,6 +4,15 @@
     position: absolute;
 }
 
+%containContent {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template: 17% 1fr / 10% 1fr 10%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+}
+
 %grid {
     height: 100vh;
     width: 100vw;
