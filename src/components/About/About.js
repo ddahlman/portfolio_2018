@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import style from './About.scss';
 import HillsWithTrees from '../HillsWithTrees/HillsWithTrees';
 import SvgBackground from '../SvgBackground/SvgBackground';
-import BarChart from './BarChart'
+import BarChart from './BarChart';
 import PropTypes from 'prop-types';
+import AboutTools from './AboutTools';
+import AboutText from './AboutText';
 
 export default class About extends Component {
 	constructor(props) {
@@ -35,6 +37,8 @@ export default class About extends Component {
 				<div className={style.container}>
 					<section className={style.contentContainer}>
 						<BarChart isGrowing={isGrowing} />
+						<AboutTools />
+						<AboutText />
 					</section>
 					<SvgBackground cssClasses={cssClasses} />
 					<HillsWithTrees />

@@ -13,7 +13,13 @@
         overflow-y: scroll;
         -ms-overflow-style: none;
 
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
         .contentContainer {
+            grid-column: 2 / 3;
+            grid-row: 2;
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(2, 1fr);
@@ -34,6 +40,11 @@
 
 .barChart {
     grid-area: barchart;
+
+    .barChartText {
+        font: $fontSmall;
+        fill: #fff;
+    }
 }
 
 .bar {
@@ -56,10 +67,7 @@
     }
 }
 
-.barChartText {
-    font: $fontSmall;
-    fill: #fff;
-}
+
 
 .aboutToolsContainer {
     grid-area: tools;
