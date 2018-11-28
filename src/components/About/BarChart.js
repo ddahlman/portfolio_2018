@@ -31,11 +31,11 @@ export default class BarChart extends Component {
         return (
             <div className={style.barChart}>
                 <svg
-                    viewBox="0 0 1350 685"
+                    viewBox="-110 -100 350 385"
                     fill="none"
                     preserveAspectRatio="xMinYMin meet"
                 >
-                    <g transform={"translate(110, 50)"}>
+                    <g>
                         <AllBarScales scaleLabels={scaleLabels} />
                         <polyline
                             strokeWidth="2"
@@ -43,7 +43,6 @@ export default class BarChart extends Component {
                             fill="none"
                             points="0,-10 0,150 200,150"
                         />
-
                         <AllBarColumns columns={columns} isGrowing={isGrowing} />
                     </g>
                 </svg>

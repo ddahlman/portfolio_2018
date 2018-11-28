@@ -1,12 +1,11 @@
 import React from "react";
 import style from "./About.scss";
 
-const BarColumn = ({ barClass, spaceX, pointX, angleX, skill }) => {
-    console.log(barClass)
+const BarColumn = ({ isGrowing, spaceX, pointX, angleX, skill, bar }) => {
     return (
         <g>
             <rect
-                className={barClass}
+                className={isGrowing ? `${style.bar} ${style[bar.barClass]}` : style.bar}
                 y="95"
                 transform={`translate(0) rotate(180 ${spaceX} 120)`}
             />

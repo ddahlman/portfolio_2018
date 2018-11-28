@@ -9,7 +9,8 @@ const AllBarColumns = ({ columns, isGrowing }) => {
                 ...acc.components,
                 <BarColumn
                     key={bar.id}
-                    barClass={isGrowing ? `${style.bar} ${style[bar.barClass]}` : style.bar}
+                    isGrowing={isGrowing}
+                    bar={bar}
                     spaceX={(i + 1) * 15}
                     pointX={acc.pointX}
                     angleX={acc.angleX}
