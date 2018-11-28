@@ -15,19 +15,25 @@
 
         .contentContainer {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 20px;
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas:
+                ". barchart barchart tools tools ."
+                ". text text text text .";
+
+            @media (max-width: 600px) {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas:
+                    "barchart barchart barchart"
+                    ". tools ."
+                    ". text .";
+            }
         }
     }
 }
 
 .barChart {
-    width: 100%;
-    height: 100%;
-    grid-column: 1/2;
-    grid-row: 1/2;
+    grid-area: barchart;
 }
 
 .bar {
@@ -53,4 +59,29 @@
 .scaleText {
     font: $fontSmall;
     fill: #fff;
+}
+
+.aboutToolsContainer {
+    grid-area: tools;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: repeat(2, min-content);
+    grid-gap: 10px;
+    align-content: center;
+    width: 85%;
+    font: $fontSmall;
+
+    .aboutTextInnerUl {
+        list-style: disc;
+    }
+
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(2, min-content);
+    }
+}
+
+.aboutText {
+    grid-area: text;
+    font: $fontSmall;
 }
