@@ -1,9 +1,35 @@
 @import '../variables';
 @import '../mixins';
 @import '../extensions';
+
 .absoluteContainer {
     @extend %absoluteContainer;
+
     .container {
-        @extend %grid;
+        @extend %containContent;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .welcomeContainer {
+            grid-column: 2 / 3;
+            grid-row: 2;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-content: center;
+
+            &.fadeUp {
+                opacity: 1;
+                top: 0;
+                z-index: 1001;
+            }
+
+            &.fadeDown {
+                opacity: 0;
+                top: 50%;
+                z-index: -1;
+            }
+        }
     }
 }

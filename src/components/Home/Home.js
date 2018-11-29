@@ -3,6 +3,7 @@ import style from './Home.scss';
 import HillsWithTrees from '../HillsWithTrees/HillsWithTrees';
 import PropTypes from 'prop-types';
 import SvgBackground from '../SvgBackground/SvgBackground';
+import WelcomeText from './WelcomeText';
 
 export default class Home extends Component {
 	constructor(props) {
@@ -30,10 +31,12 @@ export default class Home extends Component {
 
 
 	render() {
+		console.log(this.props)
 		const { cssClasses } = this.state;
 		return (
 			<section className={style.absoluteContainer}>
 				<div className={style.container}>
+					<WelcomeText />
 					<SvgBackground cssClasses={cssClasses} />
 					<HillsWithTrees />
 				</div>

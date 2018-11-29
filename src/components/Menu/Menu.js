@@ -5,13 +5,13 @@ import MyLink from './MyLink';
 const Menu = () => {
 	return (
 		<div className={style.absoluteContainer}>
-			<div className={style.menuGrid}>
+			<nav className={style.menuGrid}>
 				<ul className={style.menu}>
 					<MyLink exact direction="/">Home</MyLink>
 					<MyLink direction="/about">About</MyLink>
 					<MyLink direction="/portfolio">Portfolio</MyLink>
 				</ul>
-			</div>
+			</nav>
 		</div>
 	);
 };
