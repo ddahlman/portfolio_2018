@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { AppProvider } from './ContextComponent'
 import Menu from './components/Menu/Menu';
 import Content from './components/Content/Content';
 import Logo from './Logo';
@@ -31,7 +32,7 @@ export default class App extends Component {
 		return (
 			<div className={appContainer}>
 				{animationComplete ?
-					[<Menu key={'menu'} />, <Content key={'content'} />] :
+					[<Menu key={'menu'} />, <AppProvider key={'appProvider'} value={transitionComplete}><Content key={'content'} /></AppProvider>] :
 					<Logo key={'logo'} isFinished={this.checkAnimationStatus} />
 				}
 				{!transitionComplete && [<div key={'panel-1'} onTransitionEnd={this.checkTransitionStatus} className={panelLeft}></div>,

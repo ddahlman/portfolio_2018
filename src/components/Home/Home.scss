@@ -12,23 +12,34 @@
             display: none;
         }
 
-        .welcomeContainer {
+        .textContainer {
             grid-column: 2 / 3;
             grid-row: 2;
             display: grid;
             grid-template-columns: 1fr;
-            justify-content: center;
+            grid-template-rows: 130px 20%;
+            position: absolute;
 
             &.fadeUp {
                 opacity: 1;
                 top: 0;
-                z-index: 1001;
+                z-index: 1;
             }
 
             &.fadeDown {
                 opacity: 0;
                 top: 50%;
                 z-index: -1;
+            }
+
+            .welcome {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+                justify-self: center;
+
+                .header {
+                    font: $fontLargeBold;
+                }
             }
         }
     }

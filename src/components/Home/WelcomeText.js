@@ -1,27 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { AppConsumer } from '../../ContextComponent'
 import FLIP from '../FLIP';
 import style from './Home.scss';
 
-export default class WelcomeText extends Component {
-    constructor() {
-        super();
-        this.state = {
-            hasFadedUp: false
-        }
-    }
-    render() {
-        const { hasFadedUp } = this.state;
-        const fadeUp = hasFadedUp ? `${style.welcomeContainer} ${style.fadeUp}` : `${style.welcomeContainer} ${style.fadeDown}`;
-        return (
-            <FLIP
-                animate={hasFadedUp}
-                duration={{ transform: '.5s', opacity: '2s', delay: '0s' }}
-                styleDeclaration={'transformAndOpacity'}
-            >
-                <section className={fadeUp}>
-                    <h1 className={style.header}>Daniel Dahlman</h1>
-                </section>
-            </FLIP>
-        );
-    }
+const WelcomeText = () => {
+
+    return (
+        <AppConsumer>
+            {transitionComplete => {
+                console.log(transitionComplete);
+                return (<FLIP
+                    animate={transitionComplete}
+                    duration={{ transform: '.5s', opacity: '1s', delay: '0s' }}
+                    styleDeclaration={'transformAndOpacity'}
+                >
+                    <section className={transitionComplete ? `${style.textContainer} ${style.fadeUp}` : `${style.textContainer} ${style.fadeDown}`}>
+                        <div className={style.welcome}><h1 className={style.header}>Daniel Dahlman</h1></div>
+                    </section>
+                </FLIP>)
+            }}
+        </AppConsumer>
+    );
+
 }
+
+export default WelcomeText;

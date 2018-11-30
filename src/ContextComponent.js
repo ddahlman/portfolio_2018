@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const ColorContext = createContext({});
-export const ColorProvider = ColorContext.Provider;
-export const ColorConsumer = ColorContext.Consumer;
+const AppContext = createContext({});
+export const AppProvider = AppContext.Provider;
+export const AppConsumer = AppContext.Consumer;

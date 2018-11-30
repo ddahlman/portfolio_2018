@@ -31,12 +31,13 @@ export default class Home extends Component {
 
 
 	render() {
-		console.log(this.props)
 		const { cssClasses } = this.state;
 		return (
 			<section className={style.absoluteContainer}>
 				<div className={style.container}>
+
 					<WelcomeText />
+
 					<SvgBackground cssClasses={cssClasses} />
 					<HillsWithTrees />
 				</div>
