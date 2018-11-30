@@ -15,7 +15,9 @@ const WelcomeText = () => {
                     styleDeclaration={'transformAndOpacity'}
                 >
                     <section className={transitionComplete ? `${style.textContainer} ${style.fadeUp}` : `${style.textContainer} ${style.fadeDown}`}>
-                        <div className={style.welcome}><h1 className={style.header}>Daniel Dahlman</h1></div>
+                        <div className={style.welcome}>
+                            <h1 className={style.header}>Daniel Dahlman</h1>
+                        </div>
                     </section>
                 </FLIP>)
             }}
