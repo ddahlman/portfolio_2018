@@ -25,7 +25,6 @@ const WelcomeText = () => {
             }}
         </AppConsumer>
     );
-
 }
 
 export default WelcomeText;

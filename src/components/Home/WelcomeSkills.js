@@ -8,13 +8,15 @@ const WelcomeSkills = ({ animate }) => {
         { id: 3, skill: 'Sass' },
         { id: 4, skill: 'JavaScript' },
         { id: 5, skill: 'Webpack' },
-        { id: 6, skill: 'Gulp' },
-        { id: 7, skill: 'ajax' },
-        { id: 8, skill: 'Figma' },
-        { id: 9, skill: 'Invision' },
-        { id: 10, skill: 'Wordpress' },
-        { id: 11, skill: 'PHP' },
-        { id: 12, skill: 'MySQL' }
+        { id: 6, skill: 'HTML5' },
+        { id: 7, skill: 'CSS3' },
+        { id: 8, skill: 'Gulp' },
+        { id: 9, skill: 'ajax' },
+        { id: 10, skill: 'Figma' },
+        { id: 11, skill: 'Invision' },
+        { id: 12, skill: 'Wordpress' },
+        { id: 13, skill: 'PHP' },
+        { id: 14, skill: 'MySQL' }
     ];
     const slider = skills.map(el => <p key={el.id} className={animate ? `${style.slideEl} ${style.slideToLeft}` : style.slideEl}>{el.skill}</p>);
     return (<div className={style.slideContainer}>{slider}</div>);

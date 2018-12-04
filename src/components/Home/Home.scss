@@ -78,10 +78,10 @@
     margin: 0;
     text-align: center;
 
-    @for $i from 1 through 12 {
+    @for $i from 1 through 14 {
         &.slideToLeft:nth-child(#{$i}) {
             transform: translate3d(100%, 0, 0);
-            animation: slide 24s cubic-bezier(0.19, 1, 0.22, 1) #{$i * 2}s infinite;
+            animation: slide 42s cubic-bezier(0.19, 1, 0.22, 1) #{$i * 3}s infinite;
         }
     }
 }
@@ -89,11 +89,11 @@
 @keyframes slide {
 
     2%,
-    8.3% {
+    7.14% {
         transform: translate3d(0, 0, 0);
     }
 
-    10.3%,
+    10.14%,
     100% {
         transform: translate3d(-100%, 0, 0);
     }
