@@ -1,4 +1,5 @@
 import React from 'react';
+import ShareContainer from './ShareContainer';
 import style from './HillsWithTrees.scss';
 
 const HillsWithTrees = () => {
@@ -34,6 +35,7 @@ const HillsWithTrees = () => {
 					<path d="M0 22.6442C2.84267 22.6442 4.73778 7.54805 5.33 0C5.92222 7.54805 7.81733 22.6442 10.66 22.6442H0Z" transform="translate(1764.68 182.37)" fill="#C4C4C4" stroke="#C4C4C4" />
 				</svg>
 			</div>
+			<ShareContainer />
 		</div>
 	);
 };

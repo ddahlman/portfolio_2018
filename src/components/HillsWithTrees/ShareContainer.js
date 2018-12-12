@@ -43,6 +43,7 @@ export default class ShareContainer extends Component {
     }
 
     render() {
+        const { socialObjects, isOpen } = this.state;
         return (
             <section className={style.speedDialContainer}>
                 <button
