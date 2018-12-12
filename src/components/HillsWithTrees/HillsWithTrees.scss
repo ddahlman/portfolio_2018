@@ -1,9 +1,11 @@
 @import '../variables';
 @import '../mixins';
 @import '../extensions';
+
 .hill {
     @extend %hillStyle;
     z-index: 2;
+
     svg {
         @extend %hillSVG;
     }
@@ -22,43 +24,163 @@
     $trans-little-left: nth($sway-little-left-trans, $i);
     $sway-mini-right: nth($sway-mini-right-array, $i);
     $trans-mini-right: nth($sway-mini-right-trans, $i);
+
     .top#{$i} {
         animation: tree-anim-#{$i} 12s cubic-bezier(0, 0, .2, 1) #{$i/7}s infinite;
     }
+
     @keyframes tree-anim-#{$i} {
+
         4.166%,
         8.332%,
         12.998% {
             d: path($original-pos);
             transform: $original-trans;
         }
+
         16.664% {
             d: path($sway-right);
             transform: $trans-right;
         }
+
         20.83% {
             d: path($sway-left);
             transform: $trans-left;
         }
+
         24.996% {
             d: path($sway-little-right);
             transform: $trans-little-right;
         }
+
         29.162% {
             d: path($sway-little-left);
             transform: $trans-little-left;
         }
+
         33.328% {
             d: path($sway-mini-right);
             transform: $trans-mini-right;
         }
+
         37.494% {
             d: path($original-pos);
             transform: $original-trans;
         }
+
         100% {
             d: path($original-pos);
             transform: $original-trans;
         }
+    }
+}
+
+/* social media */
+
+.socialMedia {
+    fill: #002d3b;
+}
+
+%elevation {
+    transition: box-shadow 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    border-radius: 50%;
+
+    &:hover {
+        box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.speedDialContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    .speedDialBtn {
+        height: 59px;
+        width: 59px;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        background-color: transparent;
+        @extend %elevation;
+    }
+
+    .shareBtn {
+        position: absolute;
+        transform-origin: top left;
+        width: 1px;
+    }
+
+    .scale {
+        transform-origin: top left;
+        width: 40px;
+        margin-right: 10px;
+
+        &:hover {
+            animation: elevate 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+    }
+}
+
+@keyframes elevate {
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+[data-tooltip] {
+    position: relative;
+
+    &::before {
+        content: attr(data-tooltip);
+        @extend %tooltip-before;
+        @extend %tooltip-left-small;
+        bottom: 55px;
+    }
+
+    &::after {
+        @extend %tooltip-after;
+        @extend %tooltip-left-small;
+        bottom: 51px;
+    }
+
+    &:hover::before {
+        @extend %tooltip-hover-before;
+    }
+
+    &:hover::after {
+        @extend %tooltip-hover-after;
+    }
+}
+
+[data-share-tooltip] {
+    position: relative;
+
+    &::before {
+        content: attr(data-share-tooltip);
+        @extend %tooltip-before;
+        @extend %tooltip-left-big;
+        bottom: 75px;
+    }
+
+    &::after {
+        @extend %tooltip-after;
+        @extend %tooltip-left-big;
+        bottom: 71px;
+    }
+
+    &:hover::before {
+        @extend %tooltip-hover-before;
+    }
+
+    &:hover::after {
+        @extend %tooltip-hover-after;
     }
 }

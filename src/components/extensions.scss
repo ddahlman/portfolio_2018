@@ -35,3 +35,47 @@
 %hillSVG {
     place-self: end;
 }
+
+/* tooltips */
+
+%tooltip {
+    position: absolute;
+    will-change: transform;
+    transform-origin: bottom;
+    background-color: rgb(97, 97, 97);
+}
+
+%tooltip-before {
+    @extend %tooltip;
+    padding: 8px;
+    transform: translate3d(-50%, 0, 0) scale(0);
+    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    color: white;
+    border-radius: 2px;
+    font: 400 12px Roboto, sans-serif;
+}
+
+%tooltip-after {
+    content: "";
+    @extend %tooltip;
+    width: 10px;
+    height: 10px;
+    transform: translate3d(-50%, 0, 0) rotate(45deg) scale(0);
+    transition: transform 0.15s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+%tooltip-left-small {
+    left: 31%;
+}
+
+%tooltip-left-big {
+    left: 44%;
+}
+
+%tooltip-hover-before {
+    transform: translate3d(-50%, 0, 0) scale(1);
+}
+
+%tooltip-hover-after {
+    transform: translate3d(-50%, 0, 0) rotate(45deg) scale(1);
+}
