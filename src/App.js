@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppProvider } from './ContextComponent'
+import { AppProvider } from './ContextComponent';
 import Menu from './components/Menu/Menu';
 import Content from './components/Content/Content';
 import Logo from './Logo';
@@ -36,7 +36,7 @@ export default class App extends Component {
 					<Logo key={'logo'} isFinished={this.checkAnimationStatus} />
 				}
 				{!transitionComplete && [<div key={'panel-1'} onTransitionEnd={this.checkTransitionStatus} className={panelLeft}></div>,
-				<div key={'panel-2'} className={panelRight}></div>]}
+					<div key={'panel-2'} className={panelRight}></div>]}
 			</div>
 		);
 	}
