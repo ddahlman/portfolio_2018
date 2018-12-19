@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import FLIP from '../FLIP';
 import style from './Portfolio.scss';
 import PropTypes from 'prop-types';
 
-export default class CardImg extends Component {
-
-	hasLoaded = callback => e => {
-		this.props.hasLoaded(callback, e);
-	}
-
-
-	loaded = this.hasLoaded(this.props.setImageState);
-
+export default class CardImg extends PureComponent {
 	render() {
-		const { crossRotate, src, enlarged } = this.props;
+		const { crossRotate, src, enlarged, scaleCard } = this.props;
 
 		return (
 			<FLIP
@@ -25,7 +17,7 @@ export default class CardImg extends Component {
 					className={enlarged ? `${style.imgContainer} ${style.scale}` : `${style.imgContainer} ${style.collapsed}`}
 					onTransitionEnd={crossRotate}
 				>
-					<img onLoad={this.loaded} className={style.img} src={src} alt={'svg'} />
+					<img className={scaleCard ? style.img : style.hiddenImages} src={src} alt={'svg'} />
 				</div>
 			</FLIP>
 		);
@@ -38,5 +30,6 @@ CardImg.propTypes = {
 	setImageState: PropTypes.func,
 	crossRotate: PropTypes.func,
 	src: PropTypes.string,
-	enlarged: PropTypes.bool
+	enlarged: PropTypes.bool,
+	scaleCard: PropTypes.bool
 };

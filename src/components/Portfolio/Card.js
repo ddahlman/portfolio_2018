@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import style from './Portfolio.scss';
 import CardImg from './CardImg';
 import FLIP from '../FLIP';
 import PropTypes from 'prop-types';
 
-export default class Card extends Component {
+export default class Card extends PureComponent {
 	openBox = index => e => {
 		this.props.openBox(index, e);
 	}
@@ -13,8 +13,9 @@ export default class Card extends Component {
 
 	render() {
 		const { scaleCard, cardIndex, src, text, ...other } = this.props;
-
-		if (src) {
+		/* console.log(scaleCard); */
+		if (src !== null) {
+			/* console.log(scaleCard); */ 
 			return (
 				<FLIP
 					animate={scaleCard}
@@ -26,7 +27,7 @@ export default class Card extends Component {
 					styleDeclaration={'scaleAndOpacity'}
 				>
 					<div className={scaleCard ? `${style.card} ${style.isScaled}` : `${style.card} ${style.isNotScaled}`} onClick={this.open}>
-						<CardImg src={src} {...other} />
+						<CardImg src={src} scaleCard={scaleCard} {...other} />
 						<div className={style.cardText}>{scaleCard && <p>{text}</p>}</div>
 					</div>
 				</FLIP>

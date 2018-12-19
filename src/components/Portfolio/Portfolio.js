@@ -5,7 +5,8 @@ import AllCards from './AllCards';
 import FadeUpText from './FadeUpText';
 import FadeUpContent from './FadeUpContent';
 import SvgBackground from '../SvgBackground/SvgBackground';
-import portfolioItems from './portfolioItems';
+import { portfolioItems, images } from './portfolioItems';
+import ImageLoader from './ImageLoader';
 import PropTypes from 'prop-types';
 
 export default class Portfolio extends Component {
@@ -20,14 +21,13 @@ export default class Portfolio extends Component {
 			},
 			hasFadedUp: false,
 			hasRotated: false,
-			scaleCard: false,
 			isVisible: false
 		};
 		this.changeSize = this.changeSize.bind(this);
 		this.rotate = this.rotate.bind(this);
-		this.imagesHasLoaded = this.imagesHasLoaded.bind(this);
+		/* this.imagesHasLoaded = this.imagesHasLoaded.bind(this);
 		this.setImageState = this.setImageState.bind(this);
-		this.imgArray = [];
+		this.imgArray = []; */
 	}
 
 	componentDidMount() {
@@ -42,7 +42,7 @@ export default class Portfolio extends Component {
 		}
 	}
 
-	imagesHasLoaded(callback) {
+	/* imagesHasLoaded(callback) {
 		this.imgArray = [...this.imgArray, 'loaded'];
 		this.imgArray.length > 5 && callback(this.imgArray);
 	}
@@ -52,7 +52,7 @@ export default class Portfolio extends Component {
 		imgArray.length > 7 &&
 			isLoaded &&
 			this.setState({ scaleCard: isLoaded });
-	}
+	} */
 
 	rotate() { this.setState({ hasRotated: !this.state.hasRotated }); }
 
@@ -69,21 +69,22 @@ export default class Portfolio extends Component {
 
 
 	render() {
-		const { cssClasses, cards, hasFadedUp, hasRotated, scaleCard, isVisible } = this.state;
+		const { cssClasses, cards, hasFadedUp, hasRotated, isVisible } = this.state;
 		return (
 			<section className={style.absoluteContainer}>
 				<div className={isVisible ? `${style.overlay} ${style.visible} ${style.transitionVisible}` : `${style.overlay} ${style.hidden} ${style.transitionHidden}`} />
 				<div className={style.container}>
 					<div className={style.cardContainer}>
-						<AllCards cards={cards}
-							setImageState={this.setImageState}
-							scaleCard={scaleCard}
-							crossRotate={this.rotate}
-							hasLoaded={this.imagesHasLoaded}
-							openBox={this.changeSize}
-						/>
+						<ImageLoader images={images}>
+							<AllCards cards={cards}
+								/* setImageState={this.setImageState} */
+								/* scaleCard={scaleCard} */
+								crossRotate={this.rotate}
+								/* hasLoaded={this.imagesHasLoaded} */
+								openBox={this.changeSize}
+							/>
+						</ImageLoader>
 					</div>
-
 					<SvgBackground cssClasses={cssClasses} />
 					<HillsWithTrees />
 				</div>
