@@ -25,9 +25,6 @@ export default class Portfolio extends Component {
 		};
 		this.changeSize = this.changeSize.bind(this);
 		this.rotate = this.rotate.bind(this);
-		/* this.imagesHasLoaded = this.imagesHasLoaded.bind(this);
-		this.setImageState = this.setImageState.bind(this);
-		this.imgArray = []; */
 	}
 
 	componentDidMount() {
@@ -41,18 +38,6 @@ export default class Portfolio extends Component {
 			this.setState({ cssClasses });
 		}
 	}
-
-	/* imagesHasLoaded(callback) {
-		this.imgArray = [...this.imgArray, 'loaded'];
-		this.imgArray.length > 5 && callback(this.imgArray);
-	}
-
-	setImageState(imgArray) {
-		const isLoaded = imgArray.every(img => img === 'loaded');
-		imgArray.length > 7 &&
-			isLoaded &&
-			this.setState({ scaleCard: isLoaded });
-	} */
 
 	rotate() { this.setState({ hasRotated: !this.state.hasRotated }); }
 
@@ -77,10 +62,7 @@ export default class Portfolio extends Component {
 					<div className={style.cardContainer}>
 						<ImageLoader images={images}>
 							<AllCards cards={cards}
-								/* setImageState={this.setImageState} */
-								/* scaleCard={scaleCard} */
 								crossRotate={this.rotate}
-								/* hasLoaded={this.imagesHasLoaded} */
 								openBox={this.changeSize}
 							/>
 						</ImageLoader>

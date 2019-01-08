@@ -1,61 +1,46 @@
-import React, { Component, Fragment, memo, createContext } from 'react';
-import style from './Portfolio.scss';
+import React, { Component, Fragment, createContext } from 'react';
 import PropTypes from 'prop-types';
 
 const ImageContext = createContext();
 
-const LoadImg = memo(({ src, onLoad, onError }) => {
-	const handleLoad = () => onLoad(src);
-	const handleError = () => onError();
-	return <img alt="img" src={src} onLoad={handleLoad} onError={handleError} />;
-});
-
 export default class ImageLoader extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
-			loadedImgs: [],
+			loadedImgs: this.props.images.map(img => ({
+				...img,
+				src: img.unloadedSrc
+			})),
 			hasLoaded: false
 		};
-		this.onLoad = this.onLoad.bind(this);
-		this.onError = this.onError.bind(this);
 		this.imgArray = [];
 	}
 
-	onLoad(src) {
-		this.imgArray = [...this.imgArray, src];
-		this.imgArray.length >= this.props.images.length &&
-			this.setState({ loadedImgs: this.imgArray, hasLoaded: true });
+	componentDidMount() {
+		const { loadedImgs } = this.state;
+		loadedImgs.forEach((img, i) => {
+			const { src } = this.props.images[i];
+			const realImage = new Image();
+			realImage.onload = () => {
+				const images = [...loadedImgs];
+				images[i].src = src;
+				this.imgArray = [...this.imgArray, 'loaded'];
+				this.imgArray.length >= this.props.images.length &&
+					this.imgsHasLoaded(images);
+			};
+			realImage.src = src;
+		});
 	}
 
-	onError() {
-		console.error('something went wrong with img load');
+	imgsHasLoaded(images) {
+		this.setState({ hasLoaded: true, loadedImgs: images });
 	}
 
 	render() {
-		const { hasLoaded } = this.state;
-		const { children, images } = this.props;
-
+		const { children } = this.props;
 		return (
 			<Fragment>
-				{/* !hasLoaded ? (
-          <div className="hiddenImages">
-            {images.map((src, i) => (
-              <LoadImg key={i} src={src} onLoad={this.onLoad} />
-            ))}
-          </div>
-        ) : (
-          <ImageContext.Provider value={this.state}>
-            {children}
-          </ImageContext.Provider>
-        ) */}
 				<ImageContext.Provider value={this.state}>
-					<div className={style.hiddenImages}>
-						{images.map((src, i) => (
-							<LoadImg key={i} src={src} onLoad={this.onLoad} onError={this.onError} />
-						))}
-					</div>
-
 					{children}
 				</ImageContext.Provider>
 			</Fragment>
@@ -64,8 +49,8 @@ export default class ImageLoader extends Component {
 }
 
 export const ImageConsumer = ImageContext.Consumer;
-
 ImageLoader.propTypes = {
 	images: PropTypes.array,
+	src: PropTypes.string,
 	children: PropTypes.node
 };

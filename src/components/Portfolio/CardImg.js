@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 export default class CardImg extends PureComponent {
 	render() {
-		const { crossRotate, src, enlarged, scaleCard } = this.props;
+		const { crossRotate, src, enlarged, hasLoaded } = this.props;
 
 		return (
 			<FLIP
@@ -17,7 +17,7 @@ export default class CardImg extends PureComponent {
 					className={enlarged ? `${style.imgContainer} ${style.scale}` : `${style.imgContainer} ${style.collapsed}`}
 					onTransitionEnd={crossRotate}
 				>
-					<img className={scaleCard ? style.img : style.hiddenImages} src={src} alt={'svg'} />
+					<img className={hasLoaded ? style.img : style.hiddenImages} src={src} alt={'svg'} />
 				</div>
 			</FLIP>
 		);
@@ -31,5 +31,5 @@ CardImg.propTypes = {
 	crossRotate: PropTypes.func,
 	src: PropTypes.string,
 	enlarged: PropTypes.bool,
-	scaleCard: PropTypes.bool
+	hasLoaded: PropTypes.bool
 };

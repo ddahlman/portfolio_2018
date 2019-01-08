@@ -12,35 +12,29 @@ export default class Card extends PureComponent {
 	open = this.openBox(this.props.cardIndex);
 
 	render() {
-		const { scaleCard, cardIndex, src, text, ...other } = this.props;
-		/* console.log(scaleCard); */
-		if (src !== null) {
-			/* console.log(scaleCard); */ 
-			return (
-				<FLIP
-					animate={scaleCard}
-					duration={{
-						transform: '.3s',
-						opacity: '.5s',
-						delay: `0.${cardIndex}3s`
-					}}
-					styleDeclaration={'scaleAndOpacity'}
-				>
-					<div className={scaleCard ? `${style.card} ${style.isScaled}` : `${style.card} ${style.isNotScaled}`} onClick={this.open}>
-						<CardImg src={src} scaleCard={scaleCard} {...other} />
-						<div className={style.cardText}>{scaleCard && <p>{text}</p>}</div>
-					</div>
-				</FLIP>
-			);
-		} else {
-			return (<div className={style.emptyCell}></div>);
-		}
+		const { hasLoaded, cardIndex, src, text, ...other } = this.props;
+		return (
+			<FLIP
+				animate={hasLoaded}
+				duration={{
+					transform: '.3s',
+					opacity: '.5s',
+					delay: `0.${cardIndex}3s`
+				}}
+				styleDeclaration={'scaleAndOpacity'}
+			>
+				<div className={hasLoaded ? `${style.card} ${style.isScaled}` : `${style.card} ${style.isNotScaled}`} onClick={this.open}>
+					<CardImg src={src} hasLoaded={hasLoaded} {...other} />
+					<div className={style.cardText}>{hasLoaded && <p>{text}</p>}</div>
+				</div>
+			</FLIP>
+		);
 	}
 }
 
 Card.propTypes = {
 	openBox: PropTypes.func,
-	scaleCard: PropTypes.bool,
+	hasLoaded: PropTypes.bool,
 	cardIndex: PropTypes.number,
 	src: PropTypes.string,
 	text: PropTypes.string

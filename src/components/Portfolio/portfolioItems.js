@@ -23,7 +23,14 @@ const portfolioItems = [
 ];
 
 const images = [
-	homePage, dashboard, hangman, snake, todolist, git, codepen, wordpress
+	{ src: codepen, unloadedSrc: '' },
+	{ src: homePage, unloadedSrc: '' },
+	{ src: dashboard, unloadedSrc: '' },
+	{ src: git, unloadedSrc: '' },
+	{ src: hangman, unloadedSrc: '' },
+	{ src: snake, unloadedSrc: '' },
+	{ src: todolist, unloadedSrc: '' },
+	{ src: wordpress, unloadedSrc: '' }
 ];
 
 export { portfolioItems, images };
