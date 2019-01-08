@@ -1,11 +1,11 @@
-import homePage from './img/danieldahlman.svg';
-import dashboard from './img/dashboardimg.svg';
-import hangman from './img/hangman.svg';
-import snake from './img/snakegame.svg';
-import todolist from './img/todolist.svg';
-import git from './img/git.svg';
-import codepen from './img/codepen logo.svg';
-import wordpress from './img/wordpressSite.svg';
+import homePage from '../../assets/danieldahlman.svg';
+import dashboard from '../../assets/dashboardimg.svg';
+import hangman from '../../assets/hangman.svg';
+import snake from '../../assets/snakegame.svg';
+import todolist from '../../assets/todolist.svg';
+import git from '../../assets/git.svg';
+import codepen from '../../assets/codepen logo.svg';
+import wordpress from '../../assets/wordpressSite.svg';
 
 const portfolioItems = [
 	{ id: 1, enlarged: false, alt: 'homepage', header: 'Homepage', text: 'This was my first portfoliopage which was created for getting internships' },
