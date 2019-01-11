@@ -41,7 +41,6 @@ export default class FLIP extends Component {
 
 	componentDidUpdate(prevProps, prevState, snapShot) {
 		if (!snapShot) return;
-		/* console.log(snapShot); */
 		const {
 			styleDeclaration,
 			duration: { transform, opacity, delay }
@@ -59,12 +58,10 @@ export default class FLIP extends Component {
 				el.style.transform = '';
 				el.style.opacity = '';
 			}, 0);
-			/*  console.log(el); */
 		});
 	}
 
 	render() {
-		/* console.log(this.props.children); */
 		const childComponents = React.Children.map(this.props.children, child => {
 			return React.cloneElement(child, { ref: node => (this.el = node) });
 		});
