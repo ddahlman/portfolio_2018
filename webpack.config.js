@@ -7,7 +7,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 
 module.exports = {
-	entry: './src/index.js',
+	entry: ['core-js/modules/es6.promise', 'core-js/modules/es6.array.iterator', './src/index.js'],
 	output: {
 		publicPath: '/'
 	},
