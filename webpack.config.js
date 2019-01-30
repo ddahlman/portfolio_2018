@@ -1,14 +1,20 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
 	template: './src/index.html',
 	filename: './index.html'
 });
 
+const cleanWebpack = new CleanWebpackPlugin(['dist']);
+
 
 module.exports = {
-	entry: ['core-js/modules/es6.promise', 'core-js/modules/es6.array.iterator', './src/index.js'],
+	entry: ['core-js/modules/es6.promise', 'core-js/modules/es6.array.iterator', path.resolve(__dirname, './src/index.js')],
 	output: {
+		path: path.resolve(__dirname, 'dist'),
+		filename: '[name].bundle.js',
 		publicPath: '/'
 	},
 	optimization: {
@@ -89,5 +95,5 @@ module.exports = {
 	devServer: {
 		historyApiFallback: true
 	},
-	plugins: [htmlPlugin]
+	plugins: [cleanWebpack, htmlPlugin]
 };
