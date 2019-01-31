@@ -13,8 +13,9 @@ const cleanWebpack = new CleanWebpackPlugin(['dist']);
 module.exports = {
 	entry: ['core-js/modules/es6.promise', 'core-js/modules/es6.array.iterator', path.resolve(__dirname, './src/index.js')],
 	output: {
+		filename: '[name].[chunkhash].js',
+		chunkFilename: '[name].[chunkhash].js',
 		path: path.resolve(__dirname, 'dist'),
-		filename: '[name].bundle.js',
 		publicPath: '/'
 	},
 	optimization: {

@@ -21,7 +21,7 @@ if (
 ) {
 	render();
 } else {
-    import('./polyfills').then(render);
+    import(/* webpackChunkName: "polyfills" */'./polyfills').then(() => { console.log('I am imported async'); render(); });
 }
 
 
