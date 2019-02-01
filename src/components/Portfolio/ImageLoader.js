@@ -15,7 +15,7 @@ export default class ImageLoader extends Component {
 		};
 		this.imgArray = [];
 	}
-
+	/* window.onLoad instead of img? */
 	componentDidMount() {
 		const { loadedImgs } = this.state;
 		loadedImgs.forEach((img, i) => {

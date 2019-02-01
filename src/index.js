@@ -10,7 +10,8 @@ const render = () => {
 };
 
 if (
-	'Map' in window &&
+	'Symbol' in window &&
+    'Map' in window &&
     'startsWith' in String.prototype &&
     'endsWith' in String.prototype &&
     'includes' in String.prototype &&
