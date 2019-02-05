@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const htmlPlugin = new HtmlWebPackPlugin({
 	template: './src/index.html',
@@ -9,6 +10,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 const cleanWebpack = new CleanWebpackPlugin(['dist']);
 
+const bundleAnalyzer = new BundleAnalyzerPlugin();
 
 module.exports = {
 	entry: ['core-js/modules/es6.promise', 'core-js/modules/es6.array.iterator', path.resolve(__dirname, './src/index.js')],
@@ -96,5 +98,5 @@ module.exports = {
 	devServer: {
 		historyApiFallback: true
 	},
-	plugins: [cleanWebpack, htmlPlugin]
+	plugins: [cleanWebpack, htmlPlugin, bundleAnalyzer]
 };

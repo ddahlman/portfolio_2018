@@ -25,7 +25,6 @@ export default class CardImg extends PureComponent {
 }
 
 CardImg.propTypes = {
-	hasLoaded: PropTypes.func,
 	cardIndex: PropTypes.number,
 	setImageState: PropTypes.func,
 	crossRotate: PropTypes.func,
