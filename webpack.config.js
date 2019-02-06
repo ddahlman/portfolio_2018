@@ -1,7 +1,9 @@
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+/* const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; */
+const autoprefixer = require('autoprefixer');
 
 const htmlPlugin = new HtmlWebPackPlugin({
 	template: './src/index.html',
@@ -10,7 +12,15 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 const cleanWebpack = new CleanWebpackPlugin(['dist']);
 
-const bundleAnalyzer = new BundleAnalyzerPlugin();
+/* const bundleAnalyzer = new BundleAnalyzerPlugin(); */
+
+const autoprefixerPlugin = new webpack.LoaderOptionsPlugin({
+	options: {
+		postcss: [
+			autoprefixer()
+		]
+	}
+});
 
 module.exports = {
 	entry: ['core-js/modules/es6.promise', 'core-js/modules/es6.array.iterator', path.resolve(__dirname, './src/index.js')],
@@ -72,6 +82,9 @@ module.exports = {
 						}
 					},
 					{
+						loader: 'postcss-loader'
+					},
+					{
 						loader: 'sass-loader'
 					}
 				]
@@ -98,5 +111,5 @@ module.exports = {
 	devServer: {
 		historyApiFallback: true
 	},
-	plugins: [cleanWebpack, htmlPlugin, bundleAnalyzer]
+	plugins: [cleanWebpack, htmlPlugin, /* bundleAnalyzer, */ autoprefixerPlugin]
 };

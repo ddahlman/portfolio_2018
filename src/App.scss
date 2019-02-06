@@ -1,9 +1,10 @@
 @import './components/variables';
 @import './components/mixins';
 @import './components/extensions';
-$vectors: 'v1' 'v2' 'v3' 'v4' 'v5';
-$gradientChildren: 'g1' 'g2';
-$panels: 'animLeft' 'animRight';
+$vectors: 'v1''v2''v3''v4''v5';
+$gradientChildren: 'g1''g2';
+$panels: 'animLeft''animRight';
+
 @mixin vector-anim($vec, $arr, $off, $duration, $fill) {
     .#{$vec} {
         stroke-dasharray: $arr;
@@ -19,25 +20,32 @@ $panels: 'animLeft' 'animRight';
     $dash-o: map-get($array, $v);
     $duration: 0;
     $animation: 0;
+
     @if($v=="v4") {
         $duration: 5s;
     }
+
     @else {
         $duration: 2s;
     }
-    @if($v !="v1" and $v !="v5" and $v !="v4") {
+
+    @if($v !="v1"and $v !="v5"and $v !="v4") {
         $animation: fill;
     }
+
     @include vector-anim($v, $dash-a, $dash-o, $duration, $animation);
+
     @keyframes #{$v} {
         0% {
             stroke-dashoffset: $dash-o;
             opacity: 1;
         }
+
         100% {
             stroke-dashoffset: 0;
         }
     }
+
     @keyframes fill {
         to {
             fill: #f2f2f2;
@@ -48,9 +56,11 @@ $panels: 'animLeft' 'animRight';
 @each $child in $gradientChildren {
     $array: (g1: #f2f2f2, g2: #555);
     $colors: map-get($array, $child);
+
     .#{$child} {
         animation: #{$child} .3s linear forwards 2s;
     }
+
     @keyframes #{$child} {
         to {
             stop-color: $colors;
@@ -61,6 +71,7 @@ $panels: 'animLeft' 'animRight';
 @each $p in $panels {
     $array: (animLeft: -100%, animRight: 100%);
     $percent: map-get($array, $p);
+
     .#{$p} {
         transform: translate3d($percent, 0, 0);
         transition: transform 2s $cubic;
@@ -80,9 +91,11 @@ $panels: 'animLeft' 'animRight';
     grid-row: 1 / 5;
     z-index: 10000;
     will-change: transform;
+
     &.left {
         grid-column: 1 / 3;
     }
+
     &.right {
         grid-column: 3 / 5;
     }
@@ -97,9 +110,11 @@ $panels: 'animLeft' 'animRight';
     width: 60%;
     transition: opacity .5s $cubic 1s;
     place-self: center;
+
     &.fadeOut {
         opacity: 0;
     }
+
     path:nth-child(n + 2) {
         fill: transparent;
     }
