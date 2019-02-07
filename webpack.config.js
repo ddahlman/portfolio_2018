@@ -111,5 +111,5 @@ module.exports = {
 	devServer: {
 		historyApiFallback: true
 	},
-	plugins: [cleanWebpack, htmlPlugin, /* bundleAnalyzer, */ autoprefixerPlugin]
+	plugins: [cleanWebpack, htmlPlugin, /* bundleAnalyzer,  */autoprefixerPlugin]
 };
