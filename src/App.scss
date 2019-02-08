@@ -109,7 +109,8 @@ $panels: 'animLeft''animRight';
     height: 70%;
     width: 60%;
     transition: opacity .5s $cubic 1s;
-    place-self: center;
+    justify-self: center;
+    align-self: center;
 
     &.fadeOut {
         opacity: 0;
