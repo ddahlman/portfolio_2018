@@ -6,14 +6,14 @@ export default class Logo extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			addFade: false
+			fadeOut: false
 		};
 		this.animationComplete = this.animationComplete.bind(this);
 		this.logoHasFadedOut = this.logoHasFadedOut.bind(this);
 	}
 
 	animationComplete() {
-		this.setState({ addFade: !this.state.addFade });
+		this.setState({ fadeOut: !this.state.fadeOut });
 	}
 
 	logoHasFadedOut() {
@@ -21,7 +21,7 @@ export default class Logo extends Component {
 	}
 
 	render() {
-		const fade = this.state.addFade ? `${style.svgContainer} ${style.fadeOut}` : style.svgContainer;
+		const fade = this.state.fadeOut ? `${style.svgContainer} ${style.fadeOut}` : style.svgContainer;
 		return (
 			<section className={fade} onTransitionEnd={this.logoHasFadedOut}>
 				<canvas className={style.canvas} width="700" height="700"></canvas>
