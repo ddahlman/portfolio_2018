@@ -103,8 +103,42 @@ $panels: 'animLeft''animRight';
     }
 }
 
-.svgContainer {
+.ie11SvgContainer {
     position: relative;
+    z-index: 10001;
+    grid-column: 2 / 4;
+    grid-row: 2;
+    opacity: 1;
+    width: 60%;
+    justify-self: center;
+    align-self: center;
+    animation: ie11FadeOut 3s $cubic forwards;
+
+    .ie11LogoCanvas {
+        display: block;
+        width: 100%;
+        visibility: hidden;
+    }
+
+    .ie11LogoSVG {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+@keyframes ie11FadeOut {
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.svgContainer {
     z-index: 10001;
     grid-column: 2 / 4;
     grid-row: 2;
@@ -119,22 +153,7 @@ $panels: 'animLeft''animRight';
         opacity: 0;
     }
 
-    .canvas {
-        display: block;
-        width: 100%;
-        visibility: hidden;
-    }
-
-    .logoSVG {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-    }
-
-    @supports (display: grid) {
-        path:nth-child(n + 2) {
-            fill: transparent;
-        }
+    path:nth-child(n + 2) {
+        fill: transparent;
     }
 }
