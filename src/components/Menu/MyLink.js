@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import style from './Menu.scss';
 import PropTypes from 'prop-types';
 
-const MyLink = ({ children, direction }) => {
+const MyLink = ({ children, direction, ie11Class }) => {
 	return (
-		<li>
+		<li className={style[ie11Class]}>
 			<Link className={style.linkStyle} to={{ pathname: direction, state: { prevPath: location.pathname } }}>
 				{children}
 			</Link>
@@ -14,6 +14,7 @@ const MyLink = ({ children, direction }) => {
 };
 MyLink.propTypes = {
 	children: PropTypes.string,
-	direction: PropTypes.string
+	direction: PropTypes.string,
+	ie11Class: PropTypes.string
 };
 export default MyLink;

@@ -68,17 +68,18 @@ $panels: 'animLeft''animRight';
             }
         }
     }
+}
 
-    @each $p in $panels {
-        $array: (animLeft: -100%, animRight: 100%);
-        $percent: map-get($array, $p);
+@each $p in $panels {
+    $array: (animLeft: -100%, animRight: 100%);
+    $percent: map-get($array, $p);
 
-        .#{$p} {
-            transform: translate3d($percent, 0, 0);
-            transition: transform 2s $cubic;
-        }
+    .#{$p} {
+        transform: translate3d($percent, 0, 0);
+        transition: transform 2s $cubic;
     }
 }
+
 
 .container {
     display: grid;
@@ -143,7 +144,7 @@ $panels: 'animLeft''animRight';
     grid-column: 2 / 4;
     grid-row: 2;
     opacity: 1;
-    /* height: 70%; */
+    height: 70%;
     width: 60%;
     transition: opacity .5s $cubic 1s;
     justify-self: center;

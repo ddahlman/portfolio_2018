@@ -1,27 +1,51 @@
 @import '../variables';
 @import '../mixins';
 @import '../extensions';
+
 .absoluteContainer {
     @extend %absoluteContainer;
     z-index: 1000;
     width: 100vw;
+
     .menuGrid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+
         .menu {
             grid-column: 1/4;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             list-style-type: none;
             background-color: transparent;
+            grid-template-columns: repeat(3, 1fr);
+
+            @supports (display: grid) {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .home {
+                -ms-grid-column: 1;
+                -ms-grid-column-span: 1;
+            }
+
+            .about {
+                -ms-grid-column: 2;
+                -ms-grid-column-span: 1;
+            }
+
+            .portfolio {
+                -ms-grid-column: 3;
+                -ms-grid-column-span: 1;
+            }
+
             .linkStyle {
                 font: $fontMedium;
                 color: #fff;
                 text-decoration: none;
                 position: relative;
-                &:before {
-                    background-color: #fff;
+
+                &::before {
                     content: "";
+                    background-color: #fff;
                     height: 1px;
                     position: absolute;
                     bottom: -1px;
@@ -29,8 +53,9 @@
                     will-change: width;
                     width: 0;
                 }
+
                 &:hover {
-                    &:before {
+                    &::before {
                         width: 100%;
                     }
                 }
