@@ -8,19 +8,20 @@
     .container {
         @extend %containContent;
 
-        &::-webkit-scrollbar {
-            display: none;
-        }
-
         .contentContainer {
-            grid-column: 2 / 3;
             grid-row: 2;
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(2, 1fr);
+            grid-template-rows: 1fr 1fr 400px;
             grid-template-areas:
                 ". barchart barchart tools tools ."
-                ". text text text text .";
+                ". text text text text ."
+                ". . . . . .";
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             @media (max-width: 600px) {
                 grid-template-columns: repeat(3, 1fr);
