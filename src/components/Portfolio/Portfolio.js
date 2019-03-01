@@ -59,14 +59,16 @@ export default class Portfolio extends Component {
 			<section className={style.absoluteContainer}>
 				<div className={isVisible ? `${style.overlay} ${style.visible} ${style.transitionVisible}` : `${style.overlay} ${style.hidden} ${style.transitionHidden}`} />
 				<div className={style.container}>
-					<div className={style.cardContainer}>
-						<ImageLoader images={images}>
-							<AllCards cards={cards}
-								crossRotate={this.rotate}
-								openBox={this.changeSize}
-							/>
-						</ImageLoader>
-					</div>
+					<section className={style.cardContainer}>
+						<div className={style.containContent}>
+							<ImageLoader images={images}>
+								<AllCards cards={cards}
+									crossRotate={this.rotate}
+									openBox={this.changeSize}
+								/>
+							</ImageLoader>
+						</div>
+					</section>
 					<SvgBackground cssClasses={cssClasses} />
 					<HillsWithTrees />
 				</div>

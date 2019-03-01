@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ShareContainer from './ShareContainer';
 import style from './HillsWithTrees.scss';
 
 const HillsWithTrees = () => {
 	return (
-		<div>
+		<Fragment>
 			<div className={style.hill}>
 				<svg viewBox="0 0 1920 439" fill="none" preserveAspectRatio="xMinYMin meet">
 					<path d="M0 20.3866C184.064 -44.7367 512.71 61.6314 654.025 122.956C746.057 162.551 962.574 195.894 1059.33 207.616C1210.16 208.919 1431.08 159.099 1522.69 134.027C1681.61 100.944 1853.78 112.862 1920 122.956V318H0V20.3866Z" transform="translate(0 121)" fill="#D5EDFF" stroke="#D5EDFF" />
@@ -36,7 +36,7 @@ const HillsWithTrees = () => {
 				</svg>
 			</div>
 			<ShareContainer />
-		</div>
+		</Fragment>
 	);
 };
 

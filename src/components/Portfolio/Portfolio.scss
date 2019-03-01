@@ -37,19 +37,24 @@
     .container {
         @extend %containContent;
 
-
-
         .cardContainer {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 1fr 1fr 1fr 300px;
-            grid-gap: 20px;
+            grid-template-columns: 10% 1fr 10%;
+            /* grid-template-rows: 1fr 1fr 1fr; */
+            /* grid-gap: 20px; */
             /* grid-column: 2 / 3; */
             grid-row: 2 / 3;
             overflow-y: scroll;
 
             &::-webkit-scrollbar {
                 display: none;
+            }
+
+            .containContent {
+                grid-column: 2;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 20px;
             }
         }
     }
@@ -63,10 +68,11 @@
     background-color: #fff;
 
     &.isScaled {
-        height: 340px;
+        /* height: 300px; */
         cursor: pointer;
         border-radius: 3px;
         opacity: 1;
+        overflow: hidden;
     }
 
     &.isNotScaled {
@@ -111,9 +117,27 @@
     }
 
     .cardText {
-        padding: 1em;
-        font: $fontSmallBold;
+        display: grid;
+        align-content: center;
+        text-align: center;
+        height: 105px;
+        font: 300 1em Work Sans, sans-serif;
         color: #082d3a;
+        background-color: #fff;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: inherit;
+            top: -50px;
+            left: 0;
+            right: 0;
+            height: 100%;
+            transform: skewY(-8.5deg);
+            z-index: -1;
+        }
     }
 }
 
