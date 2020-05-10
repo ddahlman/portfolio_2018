@@ -1,10 +1,10 @@
-import homePage from '../../assets/danieldahlman.svg';
-import dashboard from '../../assets/dashboardimg.svg';
-import hangman from '../../assets/hangman.svg';
-import snake from '../../assets/snakegame.svg';
-import todolist from '../../assets/todolist.svg';
-import git from '../../assets/git.svg';
-import codepen from '../../assets/codepen logo.svg';
+import homePage from '../../assets/codepen logo.svg';
+import dashboard from '../../assets/danieldahlman.svg';
+import hangman from '../../assets/dashboardimg.svg';
+import snake from '../../assets/git.svg';
+import todolist from '../../assets/hangman.svg';
+import git from '../../assets/snakegame.svg';
+import codepen from '../../assets/todolist.svg';
 import wordpress from '../../assets/wordpressSite.svg';
 
 const portfolioItems = [

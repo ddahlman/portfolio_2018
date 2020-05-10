@@ -10,7 +10,7 @@ export default class CardImg extends PureComponent {
 		return (
 			<FLIP
 				animate={enlarged}
-				duration={{ transform: '.4s', opacity: '0s', delay: '0s' }}
+				duration={{ transform: '.3s', opacity: '0s', delay: '0s' }}
 				styleDeclaration={'transformAndScale'}
 			>
 				<div

@@ -20,6 +20,7 @@ export default class Card extends PureComponent {
 					transform: '.3s',
 					opacity: '.5s',
 					delay: `0.${cardIndex}3s`
+					/* delay: '0s' */
 				}}
 				styleDeclaration={'scaleAndOpacity'}
 			>
