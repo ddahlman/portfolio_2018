@@ -3,7 +3,7 @@
 @import '../extensions';
 
 .absoluteContainer {
-    @extend %absoluteContainer;
+    position: absolute;
     z-index: 1000;
     width: 100vw;
 

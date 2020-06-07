@@ -3,7 +3,7 @@
 @import '../extensions';
 
 .absoluteContainer {
-    @extend %absoluteContainer;
+    position: absolute;
 
     .overlay {
         position: absolute;
