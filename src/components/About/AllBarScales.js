@@ -1,9 +1,9 @@
-import React from "react";
-import BarScale from "./BarScale";
+import React from 'react';
+import BarScale from './BarScale';
 
 const AllBarScales = ({ scaleLabels }) =>
-    scaleLabels.map((item, i, arr) => (
-        <BarScale key={i} yAxis={i * 32} label={arr[i]} />
-    ));
+	scaleLabels.map((item, i, arr) => (
+		<BarScale key={i} yAxis={i * 32} label={arr[i]} />
+	));
 
 export default AllBarScales;
