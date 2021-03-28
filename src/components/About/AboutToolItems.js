@@ -9,10 +9,10 @@ const AboutToolItems = ({ items }) => {
 			</li>
 		));
 		return (
-			<li key={item.id}>
+			<div key={item.id}>
 				<h4>{item.header}</h4>
 				<ul className={styles.aboutTextInnerUl}>{skills}</ul>
-			</li>
+			</div>
 		);
 	});
 	return textItems;

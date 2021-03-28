@@ -26,9 +26,9 @@ const AboutTools = () => {
 	];
 
 	return (
-		<ul className={styles.aboutToolsContainer}>
+		<div className={styles.aboutToolsContainer}>
 			<AboutToolItems items={items} />
-		</ul>
+		</div>
 	);
 };
 
