@@ -24,9 +24,9 @@
         "react/jsx-uses-vars": [
             "error"
         ],
-        "no-console": [0],
+        "no-console": ["error"],
         "indent": [
-            4,
+            "error",
             "tab"
         ],
         "linebreak-style": [

@@ -4,7 +4,7 @@ import CardImg from './CardImg';
 import FLIP from '../FLIP';
 import PropTypes from 'prop-types';
 
-export default class Card extends PureComponent {
+export default class PortfolioCard extends PureComponent {
 	openBox = index => e => {
 		this.props.openBox(index, e);
 	}
@@ -33,7 +33,7 @@ export default class Card extends PureComponent {
 	}
 }
 
-Card.propTypes = {
+PortfolioCard.propTypes = {
 	openBox: PropTypes.func,
 	hasLoaded: PropTypes.bool,
 	cardIndex: PropTypes.number,

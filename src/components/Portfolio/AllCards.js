@@ -1,15 +1,15 @@
 import React from 'react';
 import { ImageConsumer } from './ImageLoader';
-import Card from './Card';
 import PropTypes from 'prop-types';
 import EmptyCard from './EmptyCard';
+import PortfolioCard from './PortfolioCard';
 
 const AllCards = ({ cards, ...other }) => {
 	return (
 		<ImageConsumer>
 			{({ loadedImgs, hasLoaded }) =>
 				cards.map((card, i) => loadedImgs[i] ? (
-					<Card
+					<PortfolioCard
 						key={`card-${card.id}`}
 						src={loadedImgs[i].src}
 						cardIndex={i}
