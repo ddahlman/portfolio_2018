@@ -6,15 +6,11 @@ import Logo from './Logo';
 import style from './App.scss';
 
 export default class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			animationComplete: false,
-			transitionComplete: false
-		};
-		this.checkAnimationStatus = this.checkAnimationStatus.bind(this);
-		this.checkTransitionStatus = this.checkTransitionStatus.bind(this);
-	}
+	state = {
+		animationComplete: false,
+		transitionComplete: false
+	};
+
 
 	checkAnimationStatus(bool) {
 		this.setState({ animationComplete: bool });
@@ -36,7 +32,7 @@ export default class App extends Component {
 					<Logo key={'logo'} isFinished={this.checkAnimationStatus} />
 				}
 				{!transitionComplete && [<div key={'panel-1'} onTransitionEnd={this.checkTransitionStatus} className={panelLeft}></div>,
-					<div key={'panel-2'} className={panelRight}></div>]}
+				<div key={'panel-2'} className={panelRight}></div>]}
 			</div>
 		);
 	}
