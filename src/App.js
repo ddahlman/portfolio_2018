@@ -12,11 +12,11 @@ export default class App extends Component {
 	};
 
 
-	checkAnimationStatus(bool) {
+	checkAnimationStatus = (bool) => {
 		this.setState({ animationComplete: bool });
 	}
 
-	checkTransitionStatus() {
+	checkTransitionStatus = () => {
 		this.setState({ transitionComplete: !this.state.transitionComplete });
 	}
 
