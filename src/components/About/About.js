@@ -6,6 +6,7 @@ import BarChart from './BarChart';
 import PropTypes from 'prop-types';
 import AboutTools from './AboutTools';
 import AboutText from './AboutText';
+import Card from '../Card/Card';
 
 export default class About extends Component {
 	constructor(props) {
@@ -36,7 +37,9 @@ export default class About extends Component {
 			<section className={style.absoluteContainer}>
 				<div className={style.container}>
 					<section className={style.contentContainer}>
-						<BarChart isGrowing={isGrowing} />
+						<Card cardColor="lightCard" gridArea="barChart">
+							<BarChart isGrowing={isGrowing} />
+						</Card>
 						<AboutTools />
 						<AboutText />
 					</section>

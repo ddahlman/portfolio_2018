@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import AllBarColumns from './AllBarColumns';
 import AllBarScales from './AllBarScales';
-import style from './About.scss';
 import PropTypes from 'prop-types';
 
 
@@ -31,24 +30,22 @@ export default class BarChart extends Component {
 		const { columns, scaleLabels } = this.state;
 		const { isGrowing } = this.props;
 		return (
-			<div className={style.barChart}>
-				<svg
-					viewBox="-170 -100 450 385"
-					fill="none"
-					preserveAspectRatio="xMinYMin meet"
-				>
-					<g>
-						<AllBarScales scaleLabels={scaleLabels} />
-						<polyline
-							strokeWidth="2"
-							stroke="#000"
-							fill="none"
-							points="0,-10 0,150 200,150"
-						/>
-						<AllBarColumns columns={columns} isGrowing={isGrowing} />
-					</g>
-				</svg>
-			</div>
+			<svg
+				viewBox="-170 -100 450 385"
+				fill="none"
+				preserveAspectRatio="xMinYMin meet"
+			>
+				<g>
+					<AllBarScales scaleLabels={scaleLabels} />
+					<polyline
+						strokeWidth="2"
+						stroke="#000"
+						fill="none"
+						points="0,-10 0,150 200,150"
+					/>
+					<AllBarColumns columns={columns} isGrowing={isGrowing} />
+				</g>
+			</svg>
 		);
 	}
 }

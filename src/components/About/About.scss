@@ -34,13 +34,9 @@
     }
 }
 
-.barChart {
-    grid-area: barchart;
-
-    .barChartText {
-        font: $fontSmall;
-        fill: #fff;
-    }
+.barChartText {
+    font: $fontSmall;
+    fill: #fff;
 }
 
 .bar {
