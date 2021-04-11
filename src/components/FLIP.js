@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class FLIP extends Component {
@@ -20,22 +20,22 @@ export default class FLIP extends Component {
 
 	selectStyle(style, invert, el) {
 		switch (style) {
-		case 'transformAndScale':
-			el.style.transform = `translate3d(${invert.x}px,${
-				invert.y
-			}px,0px) scale(${invert.scaleX}, ${invert.scaleY})`;
-			break;
-		case 'transformAndOpacity':
-			el.style.transform = `translate3d(${invert.x}px,${invert.y}px,0px)`;
-			el.style.opacity = 0;
-			break;
-		case 'scaleAndOpacity':
-			el.style.transform = `scale(${invert.scaleX}, ${invert.scaleY})`;
-			el.style.opacity = 0;
-			break;
-		default:
-			console.log('add a styledeclaration prop to the component');
-			break;
+			case 'transformAndScale':
+				el.style.transform = `translate3d(${invert.x}px,${invert.y
+					}px,0px) scale(${invert.scaleX}, ${invert.scaleY})`;
+				break;
+			case 'transformAndOpacity':
+				el.style.transform = `translate3d(${invert.x}px,${invert.y}px,0px)`;
+				el.style.opacity = 0;
+				break;
+			case 'scaleAndOpacity':
+				el.style.transform = `scale(${invert.scaleX}, ${invert.scaleY})`;
+				el.style.opacity = 0;
+				break;
+			default:
+				el.style.transform = `translate3d(${invert.x}px,${invert.y
+					}px,0px) scale(${invert.scaleX}, ${invert.scaleY})`;
+				break;
 		}
 	}
 
@@ -66,7 +66,7 @@ export default class FLIP extends Component {
 			return React.cloneElement(child, { ref: node => (this.el = node) });
 		});
 
-		return <Fragment>{childComponents}</Fragment>;
+		return <>{childComponents}</>;
 	}
 }
 

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import style from './Portfolio.scss';
-import CardImg from './CardImg';
+import PortfolioCardImg from './PortfolioCardImg';
 import FLIP from '../FLIP';
 import PropTypes from 'prop-types';
 
@@ -25,7 +25,7 @@ export default class PortfolioCard extends PureComponent {
 				styleDeclaration={'scaleAndOpacity'}
 			>
 				<div className={hasLoaded ? `${style.card} ${style.isScaled}` : `${style.card} ${style.isNotScaled}`} onClick={this.open}>
-					<CardImg src={src} hasLoaded={hasLoaded} {...other} />
+					<PortfolioCardImg src={src} hasLoaded={hasLoaded} {...other} />
 					<div className={style.cardText}>{hasLoaded && <p>{text}</p>}</div>
 				</div>
 			</FLIP>

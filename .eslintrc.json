@@ -25,10 +25,6 @@
             "error"
         ],
         "no-console": ["error"],
-        "indent": [
-            "error",
-            "tab"
-        ],
         "linebreak-style": [
             "error",
             "windows"

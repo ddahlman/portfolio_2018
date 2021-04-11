@@ -3,7 +3,7 @@ import FLIP from '../FLIP';
 import style from './Portfolio.scss';
 import PropTypes from 'prop-types';
 
-export default class CardImg extends PureComponent {
+export default class PortfolioCardImg extends PureComponent {
 	render() {
 		const { crossRotate, src, enlarged, hasLoaded } = this.props;
 
@@ -24,7 +24,7 @@ export default class CardImg extends PureComponent {
 	}
 }
 
-CardImg.propTypes = {
+PortfolioCardImg.propTypes = {
 	cardIndex: PropTypes.number,
 	setImageState: PropTypes.func,
 	crossRotate: PropTypes.func,
