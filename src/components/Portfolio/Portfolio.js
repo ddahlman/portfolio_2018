@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from './Portfolio.scss';
 import HillsWithTrees from '../HillsWithTrees/HillsWithTrees';
-import AllCards from './AllCards';
+import AllPortfolioCards from './AllPortfolioCards';
 import FadeUpText from './FadeUpText';
 import FadeUpContent from './FadeUpContent';
 import SvgBackground from '../SvgBackground/SvgBackground';
@@ -62,7 +62,7 @@ export default class Portfolio extends Component {
 					<section className={style.cardContainer}>
 						<div className={style.containContent}>
 							<ImageLoader images={images}>
-								<AllCards cards={cards}
+								<AllPortfolioCards cards={cards}
 									crossRotate={this.rotate}
 									openBox={this.changeSize}
 								/>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import EmptyCard from './EmptyCard';
 import PortfolioCard from './PortfolioCard';
 
-const AllCards = ({ cards, ...other }) => {
+const AllPortfolioCards = ({ cards, ...other }) => {
 	return (
 		<ImageConsumer>
 			{({ loadedImgs, hasLoaded }) =>
@@ -24,8 +24,8 @@ const AllCards = ({ cards, ...other }) => {
 	);
 };
 
-export default AllCards;
+export default AllPortfolioCards;
 
-AllCards.propTypes = {
+AllPortfolioCards.propTypes = {
 	cards: PropTypes.array
 };

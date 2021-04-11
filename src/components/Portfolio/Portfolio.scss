@@ -71,7 +71,7 @@
     &.isScaled {
         /* height: 300px; */
         cursor: pointer;
-        border-radius: 3px;
+        border-radius: $borderRadius;
         opacity: 1;
         overflow: hidden;
     }
