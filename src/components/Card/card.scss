@@ -2,23 +2,34 @@
 @import '../mixins';
 @import '../extensions';
 
-.darkCard {
-    background-color: $darkColor;
-}
-
-.mediumLightCard {
-    background-color: $mediumLightColor;
-}
-
-.lightCard {
-    background-color: $lightColor;
-}
 
 .cardContainer {
-    width: 80%;
     border-radius: $borderRadius;
 
     &.barChart {
-        grid-area: barchart
+        grid-area: barchart;
+        width: 80%;
     }
+
+    &.tools {
+        grid-area: tools;
+        width: 80%;
+    }
+
+    &.text {
+        grid-area: text;
+    }
+
+    &.darkCard {
+        background-color: $darkColor;
+    }
+
+    &.mediumLightCard {
+        background-color: $mediumLightColor;
+    }
+
+    &.lightCard {
+        background-color: $lightColor;
+    }
+
 }

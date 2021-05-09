@@ -1,10 +1,13 @@
 import React from 'react';
-import style from './card.scss';
+import style from './Card.scss';
 import PropTypes from 'prop-types';
 
-const Card = ({ cardColor, gridArea, children }) => {
+const Card = ({ cardColor, gridArea = '', children }) => {
+
+    const cardGridArea = gridArea ? ` ${style[gridArea]}` : '';
+
     return (
-        <div className={`${style.cardContainer} ${style[gridArea]} ${style[cardColor]}`}>
+        <div className={`${style.cardContainer} ${style[cardColor]} ${cardGridArea}`}>
             {children}
         </div>
     );

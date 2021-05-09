@@ -11,7 +11,7 @@ const AboutToolItems = ({ items }) => {
 		return (
 			<div key={item.id}>
 				<h4>{item.header}</h4>
-				<ul className={styles.aboutTextInnerUl}>{skills}</ul>
+				<ul className={styles.aboutToolsInnerUl}>{skills}</ul>
 			</div>
 		);
 	});

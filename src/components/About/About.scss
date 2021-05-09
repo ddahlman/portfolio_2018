@@ -9,14 +9,16 @@
         @extend %containContent;
 
         .contentContainer {
-            grid-row: 2;
             display: grid;
+            justify-items: center;
+            grid-row: 2;
+            grid-row-gap: 15px;
             grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(2, 470px) 400px;
+            grid-template-rows: repeat(2, 420px) 100px;
             grid-template-areas:
                 ". barchart barchart tools tools ."
                 ". text text text text ."
-                ". . . . . .";
+                ". empty empty empty empty .";
             overflow-y: scroll;
 
             &::-webkit-scrollbar {
@@ -69,11 +71,11 @@
     grid-template-columns: repeat(2, max-content);
     grid-template-rows: repeat(2, min-content);
     grid-column-gap: 15px;
-    align-content: center;
+    justify-content: center;
     width: 85%;
     font: $fontSmall;
 
-    .aboutTextInnerUl {
+    .aboutToolsInnerUl {
         list-style: disc;
     }
 
@@ -84,6 +86,12 @@
 
 .aboutText {
     grid-area: text;
+    padding: 0 30px 0 30px;
     color: #fff;
     font: $fontSmall;
+}
+
+.emptyCell {
+    grid-area: empty;
+    width: 100%;
 }

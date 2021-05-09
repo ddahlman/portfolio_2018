@@ -37,11 +37,16 @@ export default class About extends Component {
 			<section className={style.absoluteContainer}>
 				<div className={style.container}>
 					<section className={style.contentContainer}>
-						<Card cardColor="lightCard" gridArea="barChart">
+						<Card cardColor="darkCard" gridArea="barChart">
 							<BarChart isGrowing={isGrowing} />
 						</Card>
-						<AboutTools />
-						<AboutText />
+						<Card cardColor="darkCard" gridArea="tools">
+							<AboutTools />
+						</Card>
+						<Card cardColor="darkCard" gridArea="text">
+							<AboutText />
+						</Card>
+						<div className={style.emptyCell} />
 					</section>
 					<SvgBackground cssClasses={cssClasses} />
 					<HillsWithTrees />

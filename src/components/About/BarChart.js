@@ -31,7 +31,7 @@ export default class BarChart extends Component {
 		const { isGrowing } = this.props;
 		return (
 			<svg
-				viewBox="-170 -100 450 385"
+				viewBox="-205 -100 450 385"
 				fill="none"
 				preserveAspectRatio="xMinYMin meet"
 			>
