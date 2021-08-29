@@ -4,13 +4,17 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import 'typeface-work-sans';
 
-
 const render = () => {
-	ReactDOM.render(<Router><App /></Router>, document.getElementById('index'));
+    ReactDOM.render(
+        <Router>
+            <App />
+        </Router>,
+        document.getElementById('index')
+    );
 };
 
 if (
-	'Symbol' in window &&
+    'Symbol' in window &&
     'Map' in window &&
     'startsWith' in String.prototype &&
     'endsWith' in String.prototype &&
@@ -20,9 +24,10 @@ if (
     'entries' in Object &&
     'keys' in Object
 ) {
-	render();
+    render();
 } else {
-    import(/* webpackChunkName: "polyfills" */'./polyfills').then(() => { console.log('I am imported async'); render(); });
+    import(/* webpackChunkName: "polyfills" */ './polyfills').then(() => {
+        console.log('I am imported async');
+        render();
+    });
 }
-
-
