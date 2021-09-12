@@ -5,8 +5,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 /* const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; */
 const autoprefixer = require('autoprefixer');
 
-const htmlPlugin = new HtmlWebPackPlugin({
-    template: './src/index.html',
+const htmlWebpackPlugin = new HtmlWebPackPlugin({
+    title: 'Daniel Dahlman Portfolio jippi',
+    template: path.resolve(__dirname, './src/template.html'),
     filename: './index.html',
 });
 
@@ -115,7 +116,7 @@ module.exports = {
     },
     plugins: [
         cleanWebpack,
-        htmlPlugin,
+        htmlWebpackPlugin,
         /* bundleAnalyzer,  */ autoprefixerPlugin,
     ],
 };
