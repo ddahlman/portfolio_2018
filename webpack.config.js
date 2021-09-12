@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
-    title: 'Daniel Dahlman Portfolio jippi',
+    title: 'Daniel Dahlman Portfolio',
     template: path.resolve(__dirname, './src/template.ejs'),
     filename: './index.html',
 });
