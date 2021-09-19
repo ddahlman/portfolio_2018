@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 /* const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; */
 const autoprefixer = require('autoprefixer');
 
@@ -10,8 +9,6 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
     template: path.resolve(__dirname, './src/template.ejs'),
     filename: './index.html',
 });
-
-const cleanWebpack = new CleanWebpackPlugin(['dist']);
 
 /* const bundleAnalyzer = new BundleAnalyzerPlugin(); */
 
@@ -32,6 +29,7 @@ module.exports = {
         chunkFilename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
+        clean: true,
     },
     optimization: {
         runtimeChunk: 'single',
@@ -111,12 +109,5 @@ module.exports = {
             },
         ],
     },
-    devServer: {
-        historyApiFallback: true,
-    },
-    plugins: [
-        cleanWebpack,
-        htmlWebpackPlugin,
-        /* bundleAnalyzer,  */ autoprefixerPlugin,
-    ],
+    plugins: [htmlWebpackPlugin, /* bundleAnalyzer,  */ autoprefixerPlugin],
 };
