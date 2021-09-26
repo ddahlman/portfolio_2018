@@ -3,6 +3,9 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 /* const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; */
 const autoprefixer = require('autoprefixer');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
     title: 'Daniel Dahlman Portfolio',
@@ -17,6 +20,9 @@ const autoprefixerPlugin = new webpack.LoaderOptionsPlugin({
         postcss: [autoprefixer()],
     },
 });
+
+const HMR = new webpack.HotModuleReplacementPlugin();
+const ReactRefresh = new ReactRefreshWebpackPlugin();
 
 module.exports = {
     entry: [
@@ -57,6 +63,11 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
+                    options: {
+                        plugins: [
+                            isDevelopment && require('react-refresh/babel'),
+                        ].filter(Boolean),
+                    },
                 },
             },
             {
@@ -109,5 +120,10 @@ module.exports = {
             },
         ],
     },
-    plugins: [htmlWebpackPlugin, /* bundleAnalyzer,  */ autoprefixerPlugin],
+    plugins: [
+        htmlWebpackPlugin,
+        /* bundleAnalyzer,  */ autoprefixerPlugin,
+        HMR,
+        isDevelopment && ReactRefresh,
+    ].filter(Boolean),
 };

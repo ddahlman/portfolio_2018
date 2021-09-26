@@ -31,3 +31,5 @@ if (
         render();
     });
 }
+
+module.hot.accept();

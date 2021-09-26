@@ -1,1 +1,0 @@
-(globalThis.webpackChunknew_portfolio=globalThis.webpackChunknew_portfolio||[]).push([[429],{9308:(o,l,h)=>{h(2691),h(8148),h(7878),h(7657),h(4244)}}]);
