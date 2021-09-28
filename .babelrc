@@ -2,7 +2,8 @@
     "presets": [
         ["@babel/preset-env",
             {
-                "debug": true
+                "debug": true,
+                "useBuiltIns": "usage"
             }
         ],
         "@babel/preset-react"
