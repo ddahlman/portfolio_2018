@@ -21,7 +21,6 @@ const autoprefixerPlugin = new webpack.LoaderOptionsPlugin({
     },
 });
 
-const HMR = new webpack.HotModuleReplacementPlugin();
 const ReactRefresh = new ReactRefreshWebpackPlugin();
 
 module.exports = {
@@ -123,7 +122,6 @@ module.exports = {
     plugins: [
         htmlWebpackPlugin,
         /* bundleAnalyzer,  */ autoprefixerPlugin,
-        HMR,
         isDevelopment && ReactRefresh,
     ].filter(Boolean),
 };
