@@ -5,14 +5,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import 'typeface-work-sans';
 
-<<<<<<< HEAD
-ReactDOM.render(
-    <Router>
-        <App />
-    </Router>,
-    document.getElementById('index')
-);
-=======
 const render = () => {
     ReactDOM.render(
         <Router>
@@ -42,4 +34,3 @@ if (
 }
 
 module.hot.accept();
->>>>>>> 72e4211 (Config: Added HMR with react fast refresh)
