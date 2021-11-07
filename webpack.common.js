@@ -1,11 +1,14 @@
-const webpack = require('webpack');
+/* const webpack = require('webpack'); */
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 /* const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; */
-const autoprefixer = require('autoprefixer');
+/* const autoprefixer = require('autoprefixer'); */
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
+
+const cssMinimizerPlugin = new CssMinimizerPlugin();
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
     title: 'Daniel Dahlman Portfolio',
@@ -15,11 +18,11 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 
 /* const bundleAnalyzer = new BundleAnalyzerPlugin(); */
 
-const autoprefixerPlugin = new webpack.LoaderOptionsPlugin({
+/* const autoprefixerPlugin = new webpack.LoaderOptionsPlugin({
     options: {
         postcss: [autoprefixer()],
     },
-});
+}); */
 
 const ReactRefresh = new ReactRefreshWebpackPlugin();
 
@@ -40,20 +43,8 @@ module.exports = {
         runtimeChunk: 'single',
         splitChunks: {
             chunks: 'all',
-            maxInitialRequests: Infinity,
-            minSize: 0,
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name(module) {
-                        const packageName = module.context.match(
-                            /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-                        )[1];
-                        return `npm.${packageName.replace('@', '')}`;
-                    },
-                },
-            },
         },
+        minimizer: ['...', cssMinimizerPlugin],
     },
     module: {
         rules: [
@@ -79,30 +70,6 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(css|scss)/,
-                use: [
-                    {
-                        loader: 'style-loader',
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: {
-                                localIdentName: '[name]_[local]_[hash:base64]',
-                            },
-                            importLoaders: 1,
-                            sourceMap: true,
-                        },
-                    },
-                    {
-                        loader: 'postcss-loader',
-                    },
-                    {
-                        loader: 'sass-loader',
-                    },
-                ],
-            },
-            {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [{ loader: 'file-loader?name=fonts/[name].[hash].[ext]' }],
             },
@@ -121,7 +88,7 @@ module.exports = {
     },
     plugins: [
         htmlWebpackPlugin,
-        /* bundleAnalyzer,  */ autoprefixerPlugin,
+        /* bundleAnalyzer,  */ /* autoprefixerPlugin, */
         isDevelopment && ReactRefresh,
     ].filter(Boolean),
 };
