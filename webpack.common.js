@@ -37,6 +37,7 @@ module.exports = {
         chunkFilename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
+        assetModuleFilename: 'images/[hash][ext][query]',
         clean: true,
     },
     optimization: {
@@ -71,18 +72,14 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [{ loader: 'file-loader?name=fonts/[name].[hash].[ext]' }],
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[hash][ext][query]',
+                },
             },
             {
                 test: /\.(png|jpg|svg)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[path][name].[ext]',
-                        },
-                    },
-                ],
+                type: 'asset/resource',
             },
         ],
     },
