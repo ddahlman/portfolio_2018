@@ -2,7 +2,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 /* const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; */
-/* const autoprefixer = require('autoprefixer'); */
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
@@ -17,12 +16,6 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 });
 
 /* const bundleAnalyzer = new BundleAnalyzerPlugin(); */
-
-/* const autoprefixerPlugin = new webpack.LoaderOptionsPlugin({
-    options: {
-        postcss: [autoprefixer()],
-    },
-}); */
 
 const ReactRefresh = new ReactRefreshWebpackPlugin();
 
@@ -85,7 +78,7 @@ module.exports = {
     },
     plugins: [
         htmlWebpackPlugin,
-        /* bundleAnalyzer,  */ /* autoprefixerPlugin, */
+        /* bundleAnalyzer,  */
         isDevelopment && ReactRefresh,
     ].filter(Boolean),
 };

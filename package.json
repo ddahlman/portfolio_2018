@@ -2,11 +2,6 @@
   "name": "new_portfolio",
   "version": "1.0.0",
   "description": "Daniel Dahlmans portfolio site 2021",
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
   "browserslist": [
     "> 1% in SE",
     "not op_mini all",
@@ -29,7 +24,6 @@
     "@babel/preset-react": "^7.14.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
     "@webpack-cli/serve": "^1.5.2",
-    "autoprefixer": "^9.8.7",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^1.0.1",
@@ -45,6 +39,7 @@
     "node-sass": "^6.0.1",
     "postcss": "^8.3.9",
     "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.4.1",
     "react-refresh": "^0.10.0",
     "sass-loader": "^12.1.0",
