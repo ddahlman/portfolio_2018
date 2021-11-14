@@ -20,14 +20,7 @@ module.exports = merge(webpackCommon, {
                             sourceMap: true,
                         },
                     },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            postcssOptions: {
-                                plugins: [['postcss-preset-env']],
-                            },
-                        },
-                    },
+                    'postcss-loader',
                     'sass-loader',
                 ],
             },
