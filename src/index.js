@@ -27,8 +27,14 @@ if (
 ) {
     render();
 } else {
-    import(/* webpackChunkName: "polyfills" */ './polyfills').then(() => {
-        console.log('I am imported async');
-        render();
-    });
+    import(/* webpackChunkName: "polyfills" */ './polyfills')
+        .then(() => {
+            console.log('I am imported async');
+            render();
+        })
+        .catch((e) =>
+            console.error(
+                `something went wrong in index.js while importing polyfills: ${e}`
+            )
+        );
 }
