@@ -1,18 +1,9 @@
 import './react-refresh-fix';
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import 'typeface-work-sans';
-
-const render = () => {
-    ReactDOM.render(
-        <Router>
-            <App />
-        </Router>,
-        document.getElementById('index')
-    );
-};
 
 if (
     'Symbol' in window &&
@@ -25,16 +16,25 @@ if (
     'entries' in Object &&
     'keys' in Object
 ) {
-    render();
+    console.log('hej på ie');
+    ReactDOM.render(
+        <Router>
+            <App />
+        </Router>,
+        document.getElementById('index')
+    );
 } else {
-    import(/* webpackChunkName: "polyfills" */ './polyfills')
-        .then(() => {
-            console.log('I am imported async');
-            render();
-        })
-        .catch((e) =>
-            console.error(
-                `something went wrong in index.js while importing polyfills: ${e}`
-            )
-        );
+    console.log("I'm an old browser");
+    const NoOldBrowsersDisclaimer = React.lazy(() =>
+        import(
+            /* webpackChunkName: "NoOldBrowsersDisclaimer" */ './NoOldBrowsersDisclaimer'
+        )
+    );
+    console.log('I am imported async');
+    ReactDOM.render(
+        <Suspense fallback={<div>Loading...</div>}>
+            <NoOldBrowsersDisclaimer />
+        </Suspense>,
+        document.getElementById('index')
+    );
 }
