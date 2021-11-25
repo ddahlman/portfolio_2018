@@ -26,9 +26,7 @@ const WelcomeText = () => {
                             }
                         >
                             <h1 className={style.header}>Daniel Dahlman</h1>
-                            <p className={style.text1}>
-                                junior front-end developer
-                            </p>
+                            <p className={style.text1}>Front-end developer</p>
                             <p className={style.text2}>
                                 Welcome to my personal website
                             </p>

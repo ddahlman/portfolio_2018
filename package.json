@@ -4,8 +4,7 @@
   "description": "Daniel Dahlmans portfolio site 2021",
   "browserslist": [
     "> 1% in SE",
-    "not op_mini all",
-    "IE 11"
+    "not op_mini all"
   ],
   "main": "index.js",
   "scripts": {

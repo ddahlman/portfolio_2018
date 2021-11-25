@@ -22,21 +22,6 @@
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
 
-            .home {
-                -ms-grid-column: 1;
-                -ms-grid-column-span: 1;
-            }
-
-            .about {
-                -ms-grid-column: 2;
-                -ms-grid-column-span: 1;
-            }
-
-            .portfolio {
-                -ms-grid-column: 3;
-                -ms-grid-column-span: 1;
-            }
-
             .linkStyle {
                 display: inline-block;
                 font: $fontMedium;
