@@ -27,7 +27,7 @@ if (
     console.log("I'm an old browser");
     const NoOldBrowsersDisclaimer = React.lazy(() =>
         import(
-            /* webpackChunkName: "NoOldBrowsersDisclaimer" */ './NoOldBrowsersDisclaimer'
+            /* webpackChunkName: "NoOldBrowsersDisclaimer" */ './NoOldBrowsersDisclaimer/NoOldBrowsersDisclaimer'
         )
     );
     console.log('I am imported async');
