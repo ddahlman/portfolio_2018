@@ -1,4 +1,4 @@
-import React, { Component, Fragment, createContext } from 'react';
+import { Component, createContext } from 'react';
 import PropTypes from 'prop-types';
 
 const ImageContext = createContext();
@@ -39,11 +39,11 @@ export default class ImageLoader extends Component {
     render() {
         const { children } = this.props;
         return (
-            <Fragment>
+            <>
                 <ImageContext.Provider value={this.state}>
                     {children}
                 </ImageContext.Provider>
-            </Fragment>
+            </>
         );
     }
 }

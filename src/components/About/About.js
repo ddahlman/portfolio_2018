@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import style from './About.scss';
 import HillsWithTrees from '../HillsWithTrees/HillsWithTrees';
 import SvgBackground from '../SvgBackground/SvgBackground';

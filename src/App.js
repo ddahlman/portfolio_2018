@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { AppProvider } from './ContextComponent';
 import Menu from './components/Menu/Menu';
 import Content from './components/Content/Content';

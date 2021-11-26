@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './Menu.scss';
 import MyLink from './MyLink';
 

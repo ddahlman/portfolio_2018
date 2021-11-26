@@ -1,4 +1,3 @@
-import React from 'react';
 import BarScale from './BarScale';
 
 const AllBarScales = ({ scaleLabels }) =>

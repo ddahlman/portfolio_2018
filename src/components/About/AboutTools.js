@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './About.scss';
 import AboutToolItems from './AboutToolItems';
 

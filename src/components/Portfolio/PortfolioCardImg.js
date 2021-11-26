@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 import FLIP from '../FLIP';
 import style from './Portfolio.scss';
 import PropTypes from 'prop-types';

@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './NoOldBrowsersDisclaimer.scss';
 
 const NoOldBrowsersDisclaimer = () => {

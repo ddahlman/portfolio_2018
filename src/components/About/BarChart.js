@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import AllBarColumns from './AllBarColumns';
 import AllBarScales from './AllBarScales';
 import PropTypes from 'prop-types';

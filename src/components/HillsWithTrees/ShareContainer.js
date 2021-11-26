@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import ShareButton from './ShareButton';
 import AllSocialButtons from './AllSocialButtons';
 import style from './HillsWithTrees.scss';

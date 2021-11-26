@@ -1,10 +1,9 @@
-import React, { Fragment } from 'react';
 import ShareContainer from './ShareContainer';
 import style from './HillsWithTrees.scss';
 
 const HillsWithTrees = () => {
     return (
-        <Fragment>
+        <>
             <div className={style.hill}>
                 <svg
                     viewBox="0 0 1920 439"
@@ -140,7 +139,7 @@ const HillsWithTrees = () => {
                 </svg>
             </div>
             <ShareContainer />
-        </Fragment>
+        </>
     );
 };
 

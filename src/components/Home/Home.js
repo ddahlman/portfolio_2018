@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import style from './Home.scss';
 import HillsWithTrees from '../HillsWithTrees/HillsWithTrees';
 import PropTypes from 'prop-types';

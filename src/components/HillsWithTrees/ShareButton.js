@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './HillsWithTrees.scss';
 
 const ShareButton = () => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ImageConsumer } from './ImageLoader';
 import PropTypes from 'prop-types';
 import EmptyCard from './EmptyCard';

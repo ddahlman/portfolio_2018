@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 import style from './Portfolio.scss';
 import PortfolioCardImg from './PortfolioCardImg';
 import FLIP from '../FLIP';

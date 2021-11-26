@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import Cross from './Cross';
 import FLIP from '../FLIP';
 import style from './Portfolio.scss';

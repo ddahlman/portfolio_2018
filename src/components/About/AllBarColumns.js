@@ -1,4 +1,3 @@
-import React from 'react';
 import BarColumn from './BarColumn';
 import PropTypes from 'prop-types';
 

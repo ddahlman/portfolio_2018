@@ -1,4 +1,3 @@
-import React from 'react';
 import FLIP from '../FLIP';
 import IconContent from './IconContent';
 import style from './HillsWithTrees.scss';
