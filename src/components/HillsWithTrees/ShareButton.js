@@ -12,6 +12,6 @@ const ShareButton = () => {
             />
         </svg>
     );
-}
+};
 
 export default ShareButton;

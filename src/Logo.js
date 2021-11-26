@@ -30,20 +30,17 @@ export default class Logo extends Component {
             return (
                 <section
                     className={style.ie11SvgContainer}
-                    onAnimationEnd={this.logoHasFadedOut}
-                >
+                    onAnimationEnd={this.logoHasFadedOut}>
                     <canvas
                         className={style.ie11LogoCanvas}
                         width="700"
-                        height="700"
-                    ></canvas>
+                        height="700"></canvas>
                     <svg
                         className={style.ie11LogoSVG}
                         viewBox="0 0 700 700"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        preserveAspectRatio="xMinYMin meet"
-                    >
+                        preserveAspectRatio="xMinYMin meet">
                         <path
                             className={style.v1}
                             d="M0 15.0729V0H600V15.0729C576.874 29.0294 483.035 56.5403 292.683 54.9325C102.331 53.3247 18.2475 27.6896 0 15.0729Z"
@@ -92,8 +89,7 @@ export default class Logo extends Component {
                                 cy="0.5"
                                 r="0.5"
                                 gradientUnits="userSpaceOnUse"
-                                gradientTransform="matrix(-670 1 -10.9091 -7309.09 640.455 3681.55)"
-                            >
+                                gradientTransform="matrix(-670 1 -10.9091 -7309.09 640.455 3681.55)">
                                 <stop
                                     className={style.g1}
                                     offset="0.20452"
@@ -113,14 +109,12 @@ export default class Logo extends Component {
             return (
                 <section
                     className={fade}
-                    onTransitionEnd={this.logoHasFadedOut}
-                >
+                    onTransitionEnd={this.logoHasFadedOut}>
                     <svg
                         viewBox="0 0 700 700"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        preserveAspectRatio="xMinYMin meet"
-                    >
+                        preserveAspectRatio="xMinYMin meet">
                         <path
                             className={style.v1}
                             d="M0 15.0729V0H600V15.0729C576.874 29.0294 483.035 56.5403 292.683 54.9325C102.331 53.3247 18.2475 27.6896 0 15.0729Z"
@@ -169,8 +163,7 @@ export default class Logo extends Component {
                                 cy="0.5"
                                 r="0.5"
                                 gradientUnits="userSpaceOnUse"
-                                gradientTransform="matrix(-670 1 -10.9091 -7309.09 640.455 3681.55)"
-                            >
+                                gradientTransform="matrix(-670 1 -10.9091 -7309.09 640.455 3681.55)">
                                 <stop
                                     className={style.g1}
                                     onAnimationEnd={this.animationComplete}

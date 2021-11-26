@@ -32,8 +32,7 @@ export default class BarChart extends Component {
             <svg
                 viewBox="-205 -100 450 385"
                 fill="none"
-                preserveAspectRatio="xMinYMin meet"
-            >
+                preserveAspectRatio="xMinYMin meet">
                 <g>
                     <AllBarScales scaleLabels={scaleLabels} />
                     <polyline

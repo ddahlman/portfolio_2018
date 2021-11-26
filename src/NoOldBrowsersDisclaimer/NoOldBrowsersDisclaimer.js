@@ -16,14 +16,12 @@ const NoOldBrowsersDisclaimer = () => {
                 </a>
                 <a
                     className={style.link}
-                    href="https://www.mozilla.org/sv-SE/firefox/new/"
-                >
+                    href="https://www.mozilla.org/sv-SE/firefox/new/">
                     Firefox
                 </a>
                 <a
                     className={style.link}
-                    href="https://www.microsoft.com/sv-se/edge"
-                >
+                    href="https://www.microsoft.com/sv-se/edge">
                     Microsoft Edge
                 </a>
             </article>

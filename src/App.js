@@ -35,8 +35,7 @@ export default class App extends Component {
                         <Menu key={'menu'} />,
                         <AppProvider
                             key={'appProvider'}
-                            value={transitionComplete}
-                        >
+                            value={transitionComplete}>
                             <Content key={'content'} />
                         </AppProvider>,
                     ]
@@ -47,8 +46,7 @@ export default class App extends Component {
                     <div
                         key={'panel-1'}
                         onTransitionEnd={this.checkTransitionStatus}
-                        className={panelLeft}
-                    ></div>,
+                        className={panelLeft}></div>,
                     <div key={'panel-2'} className={panelRight}></div>,
                 ]}
             </div>

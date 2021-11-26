@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './Card.scss';
 import PropTypes from 'prop-types';
 
@@ -7,8 +6,7 @@ const Card = ({ cardColor, gridArea = '', children }) => {
 
     return (
         <div
-            className={`${style.cardContainer} ${style[cardColor]} ${cardGridArea}`}
-        >
+            className={`${style.cardContainer} ${style[cardColor]} ${cardGridArea}`}>
             {children}
         </div>
     );

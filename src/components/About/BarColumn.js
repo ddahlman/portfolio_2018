@@ -27,8 +27,7 @@ const BarColumn = ({ isGrowing, spaceX, pointX, angleX, skill, bar }) => {
                 x={pointX - 31}
                 y="159"
                 fill={'#000'}
-                textAnchor="end"
-            >
+                textAnchor="end">
                 {skill}
             </text>
         </g>

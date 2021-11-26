@@ -9,8 +9,7 @@ const AllSocialButtons = ({ socialObjects, isOpen }) =>
                 key={obj.id}
                 href={obj.href}
                 target="_blank"
-                rel="noopener"
-            >
+                rel="noopener noreferrer">
                 <SocialMediaIcon
                     toolTip={obj.toolTip}
                     svgPath={obj.id}
@@ -20,6 +19,5 @@ const AllSocialButtons = ({ socialObjects, isOpen }) =>
             </a>
         );
     });
-
 
 export default AllSocialButtons;

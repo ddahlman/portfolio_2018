@@ -4,7 +4,7 @@ import style from './HillsWithTrees.scss';
 const IconContent = ({ svgPath }) => {
     let content = null;
     switch (svgPath) {
-        case "FB":
+        case 'FB':
             content = (
                 <path
                     fillRule="evenodd"
@@ -14,7 +14,7 @@ const IconContent = ({ svgPath }) => {
                 />
             );
             break;
-        case "TW":
+        case 'TW':
             content = (
                 <path
                     fillRule="evenodd"
@@ -24,7 +24,7 @@ const IconContent = ({ svgPath }) => {
                 />
             );
             break;
-        case "MS":
+        case 'MS':
             content = (
                 <g id="Messenger">
                     <path
@@ -42,7 +42,7 @@ const IconContent = ({ svgPath }) => {
                 </g>
             );
             break;
-        case "IN":
+        case 'IN':
             content = (
                 <path
                     fillRule="evenodd"
@@ -57,6 +57,6 @@ const IconContent = ({ svgPath }) => {
     }
 
     return content;
-}
+};
 
 export default IconContent;

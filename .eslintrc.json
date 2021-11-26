@@ -5,10 +5,16 @@
         "amd": true,
         "node": true
     },
+    "settings": {
+        "react": {
+            "version": "detect"
+            }
+    },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:react/jsx-runtime"
     ],
     "parser": "babel-eslint",
     "parserOptions": {
@@ -23,24 +29,10 @@
         "prettier"
     ],
     "rules": {
-        "react/jsx-uses-vars": [
-            "error"
-        ],
-        "no-console": ["error"],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "prettier/prettier": [
-            "warn",
-            {
-                "singleQuote": true,
-                "endOfLine": "auto"
-            }
-        ]
+        "react/jsx-uses-vars": "error",
+        "no-console": "error",
+        "linebreak-style": ["error", "windows"],
+        "semi": [ "error","always"],
+        "prettier/prettier": "warn"    
     }
 }

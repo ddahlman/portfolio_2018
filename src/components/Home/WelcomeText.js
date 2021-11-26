@@ -1,4 +1,3 @@
-import React from 'react';
 import { AppConsumer } from '../../ContextComponent';
 import FLIP from '../FLIP';
 import WelcomeSkills from './WelcomeSkills';
@@ -16,15 +15,13 @@ const WelcomeText = () => {
                             opacity: '1s',
                             delay: '0s',
                         }}
-                        styleDeclaration={'transformAndOpacity'}
-                    >
+                        styleDeclaration={'transformAndOpacity'}>
                         <section
                             className={
                                 transitionComplete
                                     ? `${style.textContainer} ${style.fadeUp}`
                                     : `${style.textContainer} ${style.fadeDown}`
-                            }
-                        >
+                            }>
                             <h1 className={style.header}>Daniel Dahlman</h1>
                             <p className={style.text1}>Front-end developer</p>
                             <p className={style.text2}>
