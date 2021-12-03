@@ -31,24 +31,23 @@ export default class App extends Component {
         return (
             <div className={appContainer}>
                 {animationComplete ? (
-                    [
-                        <Menu key={'menu'} />,
-                        <AppProvider
-                            key={'appProvider'}
-                            value={transitionComplete}>
-                            <Content key={'content'} />
-                        </AppProvider>,
-                    ]
+                    <>
+                        <Menu />
+                        <AppProvider value={transitionComplete}>
+                            <Content />
+                        </AppProvider>
+                    </>
                 ) : (
-                    <Logo key={'logo'} isFinished={this.checkAnimationStatus} />
+                    <Logo isFinished={this.checkAnimationStatus} />
                 )}
-                {!transitionComplete && [
-                    <div
-                        key={'panel-1'}
-                        onTransitionEnd={this.checkTransitionStatus}
-                        className={panelLeft}></div>,
-                    <div key={'panel-2'} className={panelRight}></div>,
-                ]}
+                {!transitionComplete && (
+                    <>
+                        <div
+                            onTransitionEnd={this.checkTransitionStatus}
+                            className={panelLeft}></div>
+                        <div className={panelRight}></div>
+                    </>
+                )}
             </div>
         );
     }
